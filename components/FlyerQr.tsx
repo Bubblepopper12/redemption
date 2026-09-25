@@ -12,7 +12,17 @@ export function FlyerQr() {
       <QrCode url={url} label={`QR code for ${shortUrl(url)}`} className="h-56 w-56 shrink-0 rounded-xl border-2 border-ink p-2" />
       <div className="text-left">
         <p className="text-lg text-muted">Visit / Visite:</p>
-        <p className="break-all font-mono text-3xl font-extrabold text-primary">{shortUrl(url)}</p>
+        <p className="font-mono text-2xl font-extrabold text-primary sm:text-3xl">
+          {/* If the address must wrap, wrap it after a dot, never in the middle of a word. */}
+          {shortUrl(url)
+            .split(/(?<=\.)/)
+            .map((part, i) => (
+              <span key={i} className="whitespace-nowrap">
+                {part}
+                <wbr />
+              </span>
+            ))}
+        </p>
         <p className="mt-3 text-lg text-ink">
           No phone? Use a free computer at any public library.
           <br />

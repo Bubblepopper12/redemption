@@ -123,7 +123,9 @@ export function HandoutSheet({ data, lang, size }: { data: HandoutData; lang: "e
   const qr = (
     <div className="flex flex-col items-center gap-[0.04in] text-center">
       <QrCode url={data.siteUrl} label={`QR code for ${url}`} className={half ? "h-[1.05in] w-[1.05in]" : "h-[1.7in] w-[1.7in]"} />
-      <p className={`font-mono font-bold ${half ? "text-[7.5pt]" : "text-[10pt]"} break-all`}>{url}</p>
+      <p className="whitespace-nowrap font-mono font-bold" style={{ fontSize: `${oneLinePt(url, half ? 2.3 : 1.9, half ? 7.5 : 10)}pt` }}>
+        {url}
+      </p>
       {!half && <p className="text-[9pt]">{s.scan}</p>}
     </div>
   );
@@ -181,6 +183,12 @@ export function HandoutSheet({ data, lang, size }: { data: HandoutData; lang: "e
       <p className="mt-[0.08in] text-center font-serif text-[9pt] italic">{s.footer}</p>
     </article>
   );
+}
+
+/** A font size (in points) that keeps the web address on one line in a column this many inches wide. */
+function oneLinePt(text: string, widthIn: number, maxPt: number) {
+  // Each letter of a monospace font is about 0.6 of the font size wide.
+  return Math.min(maxPt, Math.floor(((widthIn * 72) / (text.length * 0.62)) * 10) / 10);
 }
 
 /**

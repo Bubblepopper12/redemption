@@ -19,17 +19,17 @@ export default function FlyerPage() {
         <FlyerPrintButton />
       </div>
 
-      <article className="rounded-[2rem] border-4 border-ink bg-paper p-8 text-center print:rounded-none print:border-0 print:p-0">
-        <div className="flex items-center justify-center gap-3">
-          <LogoMark className="h-16 w-16" />
-          <p className="font-serif text-5xl font-bold text-ink">Redemption</p>
+      <article className="rounded-[2rem] border-4 border-ink bg-paper px-4 py-6 text-center sm:p-8 print:rounded-none print:border-0 print:p-0">
+        <div className="flex flex-col items-center justify-center gap-2 min-[400px]:flex-row min-[400px]:gap-3">
+          <LogoMark className="h-12 w-12 shrink-0 sm:h-16 sm:w-16" />
+          <p className="font-serif text-4xl font-bold text-ink sm:text-5xl">Redemption</p>
         </div>
-        <p className="mt-4 font-serif text-3xl font-bold leading-tight text-ink">Every person has worth. Every person can be redeemed.</p>
-        <p className="mt-1 font-serif text-2xl italic text-muted" lang="es">
+        <p className="mt-4 font-serif text-2xl font-bold leading-tight text-ink sm:text-3xl">Every person has worth. Every person can be redeemed.</p>
+        <p className="mt-1 font-serif text-xl italic text-muted sm:text-2xl" lang="es">
           Cada persona tiene valor. Cada persona puede ser redimida.
         </p>
 
-        <p className="mt-6 text-2xl font-semibold text-ink">Free help in Texas · Ayuda gratis en Texas</p>
+        <p className="mt-6 text-xl font-semibold text-ink sm:text-2xl">Free help in Texas · Ayuda gratis en Texas</p>
         <p className="mx-auto mt-2 max-w-xl text-xl text-ink">
           Food · Shelter · Showers · ID · Phone · Church · Medical · Jobs · Veterans · Legal
         </p>
@@ -40,7 +40,7 @@ export default function FlyerPage() {
         <FlyerQr />
 
         <div className="mx-auto mt-8 max-w-xl rounded-2xl border-4 border-ink p-4">
-          <p className="text-4xl font-extrabold text-ink">Call 2-1-1</p>
+          <p className="whitespace-nowrap text-3xl font-extrabold text-ink sm:text-4xl">Call 2-1-1</p>
           <p className="text-xl text-ink">Free · 24 hours · Any language</p>
           <p className="text-lg text-muted" lang="es">
             Llame al 2-1-1 · Gratis · 24 horas · En cualquier idioma

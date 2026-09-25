@@ -448,6 +448,10 @@ for (const [width, lang] of [[1280, "en"], [1024, "en"], [768, "es"], [375, "en"
   const page = await newPage();
   await page.goto(BASE + "/flyer/");
   await page.waitForSelector("[role=img][aria-label^='QR code'] svg");
+  await page.setViewportSize({ width: 320, height: 900 });
+  const split = await splitWords(page, "article p:not(.font-mono)");
+  check(split.length === 0, "flyer: no words split on a 320px phone", split.join(", "));
+  await page.setViewportSize({ width: 1280, height: 900 });
   check((await page.locator("[aria-label^='QR code']").getAttribute("aria-label")).includes("localhost"), "flyer QR code uses the site's real address");
   await page.emulateMedia({ media: "print" });
   check((await pdfPages(page)) === 1, "flyer prints on one page");
