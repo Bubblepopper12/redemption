@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Lightbulb, Printer, RotateCcw, Search, Trash2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, FileText, HandHeart, Lightbulb, Printer, RotateCcw, Search, Trash2 } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import { NEEDS, type NeedKey } from "@/lib/resources";
 import type { Place } from "@/lib/geo";
@@ -151,7 +151,7 @@ export function Finder() {
   );
 
   const needGrid = (compact: boolean) => (
-    <ul className={`grid gap-3 ${compact ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-5"}`}>
+    <ul className={`grid gap-3 ${compact ? "grid-cols-[repeat(auto-fill,minmax(min(100%,10.25rem),1fr))]" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-5"}`}>
       {NEEDS.map((n) => {
         const on = needs.includes(n);
         return (
@@ -160,18 +160,22 @@ export function Finder() {
               type="button"
               aria-pressed={on}
               onClick={() => toggleNeed(n)}
-              className={`relative flex w-full items-center gap-3 rounded-2xl border-2 text-left font-bold transition-colors ${
-                compact ? "min-h-14 px-3 text-base" : "min-h-28 flex-col justify-center px-3 py-4 text-center text-xl"
+              className={`relative flex w-full items-center rounded-2xl border-2 text-left font-bold transition-colors ${
+                compact
+                  ? "min-h-14 gap-2 px-2.5 text-[0.9rem] leading-tight"
+                  : "min-h-28 flex-col justify-center gap-3 px-3 py-4 text-center text-xl"
               } ${on ? "border-primary bg-primary text-white" : "border-line bg-paper text-ink hover:border-primary hover:bg-primary-soft"}`}
             >
               {on && (
                 <Check
-                  className={`absolute right-2 top-2 rounded-full bg-white p-0.5 text-primary ${compact ? "h-4 w-4" : "h-6 w-6"}`}
+                  className={`absolute rounded-full bg-white p-0.5 text-primary ${
+                    compact ? "-right-1.5 -top-1.5 h-5 w-5 ring-2 ring-primary" : "right-2 top-2 h-6 w-6"
+                  }`}
                   aria-hidden="true"
                 />
               )}
               <NeedIcon need={n} className={compact ? "h-6 w-6 shrink-0" : "h-10 w-10"} strokeWidth={2} />
-              <span>{t.needs[n]}</span>
+              <span className={compact ? "min-w-0" : ""}>{t.needs[n]}</span>
             </button>
           </li>
         );
@@ -264,58 +268,79 @@ export function Finder() {
     return (
       <>
         <div className="mx-auto max-w-6xl px-4 pb-32 pt-6 print:hidden">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <h1 className="text-2xl font-bold text-ink md:text-3xl">{t.helperOn}</h1>
-            <button
-              type="button"
-              onClick={() => clearAll()}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-line px-4 text-base font-semibold text-muted hover:border-alert hover:text-alert"
-            >
-              <Trash2 className="h-5 w-5" aria-hidden="true" />
-              {t.clearInfo}
-            </button>
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-3">
+            <h1 className="flex items-center gap-2 text-2xl font-bold text-ink md:text-3xl">
+              <HandHeart className="h-8 w-8 text-hope" aria-hidden="true" />
+              {t.helperOn}
+            </h1>
+            <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap">
+              <Link
+                href="/handout/"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl border-2 border-primary bg-paper px-3 py-1.5 text-center text-base leading-tight font-semibold text-primary no-underline hover:bg-primary-soft sm:rounded-full sm:px-4"
+              >
+                <FileText className="h-5 w-5" aria-hidden="true" />
+                {t.helperHandouts}
+              </Link>
+              <button
+                type="button"
+                onClick={() => clearAll()}
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl border-2 border-line bg-paper px-3 py-1.5 text-center text-base leading-tight font-semibold text-muted hover:border-alert hover:text-alert sm:rounded-full sm:px-4"
+              >
+                <Trash2 className="h-5 w-5" aria-hidden="true" />
+                {t.clearInfo}
+              </button>
+            </div>
           </div>
+          <p className="mb-4 max-w-3xl text-base text-muted">{t.helperIntro}</p>
           {noticeBox}
 
-          <div className="grid gap-4 rounded-3xl border-2 border-line bg-paper p-4">
-            <div className="grid gap-3 md:grid-cols-[1fr_2fr] md:items-center">
-              <label htmlFor={nameId} className="text-base font-semibold">
-                {t.stepName} <span className="font-normal text-muted">{t.optional}</span>
-              </label>
+          <div className="divide-y-2 divide-line rounded-3xl border-2 border-line bg-paper">
+            <HelperRow n={1} label={t.helperWhere}>
+              <LocationPicker place={place} onChange={changePlace} compact />
+            </HelperRow>
+            <HelperRow n={2} label={t.helperNeeds}>
+              {needGrid(true)}
+            </HelperRow>
+            <HelperRow n={3} label={t.helperName} hint={t.helperNameHint} labelFor={nameId}>
               <input
                 id={nameId}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoComplete="off"
                 placeholder={t.namePlaceholder}
-                className="min-h-12 rounded-2xl border-2 border-line px-4 text-base focus:border-primary"
+                className="min-h-12 w-full rounded-2xl border-2 border-line px-4 text-base focus:border-primary md:max-w-sm"
               />
-            </div>
-            <LocationPicker place={place} onChange={changePlace} compact />
-            {needGrid(true)}
-            <div className="flex flex-wrap items-center gap-3 border-t border-line pt-3 text-base">
-              <span className="font-bold">{t.filters}:</span>
-              <label className="inline-flex items-center gap-2">
-                {t.within}
-                <select
-                  value={filters.maxMiles ?? ""}
-                  onChange={(e) => setFilters((f) => ({ ...f, maxMiles: e.target.value ? Number(e.target.value) : undefined }))}
-                  className="min-h-11 rounded-xl border-2 border-line bg-paper px-2"
-                >
-                  <option value="">{t.any}</option>
-                  <option value="1">1 mi</option>
-                  <option value="3">3 mi</option>
-                  <option value="5">5 mi</option>
-                  <option value="10">10 mi</option>
-                </select>
-              </label>
-              <Toggle checked={!!filters.openNow} onChange={(v) => setFilters((f) => ({ ...f, openNow: v }))} label={t.openOnly} />
-              <Toggle checked={!!filters.mealsOnly} onChange={(v) => setFilters((f) => ({ ...f, mealsOnly: v }))} label={t.mealsOnly} />
-            </div>
+            </HelperRow>
+            <HelperRow label={t.filters}>
+              <div className="flex flex-wrap items-center gap-3 text-base">
+                <label className="inline-flex min-h-11 items-center gap-2 rounded-xl border-2 border-line px-3">
+                  {t.within}
+                  <select
+                    value={filters.maxMiles ?? ""}
+                    onChange={(e) => setFilters((f) => ({ ...f, maxMiles: e.target.value ? Number(e.target.value) : undefined }))}
+                    className="min-h-9 rounded-lg bg-paper px-1 font-semibold"
+                  >
+                    <option value="">{t.any}</option>
+                    <option value="1">1 mi</option>
+                    <option value="3">3 mi</option>
+                    <option value="5">5 mi</option>
+                    <option value="10">10 mi</option>
+                  </select>
+                </label>
+                <Toggle checked={!!filters.openNow} onChange={(v) => setFilters((f) => ({ ...f, openNow: v }))} label={t.openOnly} />
+                <Toggle checked={!!filters.mealsOnly} onChange={(v) => setFilters((f) => ({ ...f, mealsOnly: v }))} label={t.mealsOnly} />
+              </div>
+            </HelperRow>
           </div>
 
           <div className="mt-6">
-            {!place ? <p className="text-lg text-muted">{t.needPlace}</p> : needs.length === 0 ? <p className="text-lg text-muted">{t.pickOne}</p> : results}
+            {!place ? (
+              <p className="rounded-2xl bg-dawn-soft p-4 text-lg">{t.helperNeedPlace}</p>
+            ) : needs.length === 0 ? (
+              <p className="rounded-2xl bg-dawn-soft p-4 text-lg">{t.helperPickOne}</p>
+            ) : (
+              results
+            )}
           </div>
         </div>
 
@@ -472,6 +497,38 @@ export function Finder() {
         )}
       </div>
     </>
+  );
+}
+
+function HelperRow({
+  n,
+  label,
+  hint,
+  labelFor,
+  children,
+}: {
+  n?: number;
+  label: string;
+  hint?: string;
+  labelFor?: string;
+  children: React.ReactNode;
+}) {
+  const Tag = labelFor ? "label" : "p";
+  return (
+    <div className="grid gap-3 p-4 md:p-5 lg:grid-cols-[11rem_minmax(0,1fr)] lg:items-start lg:gap-5">
+      <div className="lg:pt-2">
+        <Tag {...(labelFor ? { htmlFor: labelFor } : {})} className="flex items-center gap-2 text-lg font-bold text-ink">
+          {n !== undefined && (
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sun text-base font-extrabold" aria-hidden="true">
+              {n}
+            </span>
+          )}
+          {label}
+        </Tag>
+        {hint && <p className="mt-1 pl-10 text-sm text-muted">{hint}</p>}
+      </div>
+      <div className="min-w-0">{children}</div>
+    </div>
   );
 }
 

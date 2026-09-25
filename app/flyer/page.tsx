@@ -10,7 +10,12 @@ export default function FlyerPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 print:max-w-none print:p-0">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3 print:hidden">
-        <p className="text-lg text-muted">Print this and share it at shelters, churches, and libraries anywhere in Texas. / Imprima y comparta este volante.</p>
+        <p className="text-lg text-muted">
+          Print this and share it at shelters, churches, and libraries anywhere in Texas. / Imprima y comparta este volante.{" "}
+          <a href="/handout/" className="font-bold">
+            Want directions to the nearest library and a devotional? Make handouts →
+          </a>
+        </p>
         <FlyerPrintButton />
       </div>
 

@@ -47,3 +47,14 @@ export async function lookupZip(zip: string): Promise<{ lat: number; lng: number
 }
 
 export const TEXAS_CENTER = { lat: 31.0, lng: -99.0 };
+
+/** Which way to walk, as one of 8 compass points (0 = north, 1 = northeast, ... 7 = northwest). */
+export function compassIndex(from: { lat: number; lng: number }, to: { lat: number; lng: number }): number {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const y = Math.sin(toRad(to.lng - from.lng)) * Math.cos(toRad(to.lat));
+  const x =
+    Math.cos(toRad(from.lat)) * Math.sin(toRad(to.lat)) -
+    Math.sin(toRad(from.lat)) * Math.cos(toRad(to.lat)) * Math.cos(toRad(to.lng - from.lng));
+  const bearing = ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+  return Math.round(bearing / 45) % 8;
+}

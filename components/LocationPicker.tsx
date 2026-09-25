@@ -109,10 +109,24 @@ export function LocationPicker({
   }
 
   const big = compact ? "min-h-12 text-base" : "min-h-16 text-xl";
+  // Compact (helper mode): one row on wide screens; on medium screens the list
+  // sits on top with ZIP and "Use my location" side by side under it.
+  const or = (extra = "") =>
+    compact && (
+      <span className={`self-center text-center text-sm font-semibold uppercase tracking-wide text-muted ${extra}`} aria-hidden="true">
+        {t.or}
+      </span>
+    );
 
   return (
-    <div className={compact ? "grid gap-3 md:grid-cols-3" : "grid gap-4"}>
-      <div>
+    <div
+      className={
+        compact
+          ? "grid items-center gap-2 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:gap-3 xl:grid-cols-[minmax(0,1.3fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)]"
+          : "grid gap-4"
+      }
+    >
+      <div className={compact ? "sm:col-span-3 xl:col-span-1" : ""}>
         <label htmlFor={pickId} className={compact ? "sr-only" : "mb-1 block text-lg font-semibold text-ink"}>
           {t.orPick}
         </label>
@@ -135,7 +149,9 @@ export function LocationPicker({
         </select>
       </div>
 
-      <form onSubmit={submitZip} className="flex gap-2">
+      {or("sm:col-span-3 xl:col-span-1")}
+
+      <form onSubmit={submitZip} className="flex min-w-0 gap-2">
         <label htmlFor={zipId} className="sr-only">
           {t.zipLabel}
         </label>
@@ -147,34 +163,36 @@ export function LocationPicker({
           maxLength={5}
           value={zip}
           onChange={(e) => setZip(e.target.value.replace(/\D/g, ""))}
-          placeholder={compact ? t.zipPlaceholder : `${t.zipLabel} · ${t.zipPlaceholder}`}
+          placeholder={compact ? t.zipShort : `${t.zipLabel} · ${t.zipPlaceholder}`}
           aria-describedby={message ? msgId : undefined}
           className={`w-full min-w-0 rounded-2xl border-2 border-line bg-paper px-4 text-ink placeholder:text-muted focus:border-primary ${big}`}
         />
         <button
           type="submit"
           disabled={zipBusy}
-          className={`rounded-2xl border-2 border-primary bg-paper px-5 font-bold text-primary hover:bg-primary-soft disabled:opacity-70 ${big}`}
+          className={`shrink-0 whitespace-nowrap rounded-2xl border-2 border-primary bg-paper px-5 font-bold text-primary hover:bg-primary-soft disabled:opacity-70 ${big}`}
         >
           {zipBusy ? t.zipLooking : t.zipGo}
         </button>
       </form>
+
+      {or()}
 
       <div>
         <button
           type="button"
           onClick={useMyLocation}
           disabled={locating}
-          className={`inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-6 font-bold text-white hover:bg-primary-dark disabled:opacity-70 ${big}`}
+          className={`inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-4 font-bold text-white hover:bg-primary-dark disabled:opacity-70 ${compact ? "xl:whitespace-nowrap" : ""} ${big}`}
         >
-          <LocateFixed className="h-6 w-6" aria-hidden="true" />
+          <LocateFixed className="h-5 w-5 shrink-0" aria-hidden="true" />
           {locating ? t.finding : t.useLocation}
         </button>
         {!compact && <p className="mt-2 text-base text-muted">{t.locationTip}</p>}
       </div>
 
       {message && (
-        <p id={msgId} role="alert" className="text-lg font-semibold text-alert md:col-span-3">
+        <p id={msgId} role="alert" className={`text-lg font-semibold text-alert ${compact ? "sm:col-span-3 xl:col-span-5" : ""}`}>
           {message}
         </p>
       )}

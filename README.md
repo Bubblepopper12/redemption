@@ -22,14 +22,15 @@ Help is open to everyone. Faith is never a condition of getting help.
 | `/connected/` | Lifeline phone program, library cards, free Wi-Fi and computers in each city. |
 | `/more-help/` | 2-1-1, how to ask for a shelter bed in each city, SNAP and Medicaid, help paying for a doctor or hospital, jobs that are hiring, veterans, legal aid, and crisis lines. |
 | `/bible/` | The **Free Bible** page (linked in the header): read or listen free online, or get a paper Bible from a church. |
-| `/flyer/` | A printable one-page flyer with the web address, a QR code, and 2-1-1, to hand out at shelters and churches. |
+| `/handout/` Make Handouts | For volunteers, churches, and outreach teams. Answer five questions (where you will hand them out, what help to list, language, size, and a devotional) and print flyers to pass out. Each flyer gives walking directions to the closest public library (for a free computer), steps for using Redemption there, the web address and a QR code, the closest help for the needs picked, 2-1-1 and crisis lines, who we are, and a short devotional with a prayer. English, Spanish, or one of each; one big flyer per page or two per page to cut in half. |
+| `/flyer/` | A simple one-page flyer with the web address, a QR code, and 2-1-1, to post at shelters and churches. |
 | `/privacy/` | Plain-language privacy promise. |
 
 Every page has:
 
 - **English / Español** button
 - **Read aloud** button (uses the browser's built-in voice)
-- **Helper mode** switch for volunteers and caseworkers: a compact screen with quick filters (distance, open now, serves meals), instant results, and the print button always visible
+- **Helper mode** switch for volunteers and caseworkers: one screen with numbered steps (1. Where are you? 2. What do they need? 3. Their first name), quick filters (distance, open now, serves meals), instant results, the print button always visible, and a shortcut to Make Handouts
 - A **Verse of the day** and the 2-1-1 number in the footer
 
 Other things that help:
@@ -88,9 +89,9 @@ This first checks the data file for mistakes, then writes the whole site into th
 1. Go to [netlify.com](https://www.netlify.com), click **Add new site → Import an existing project**, and pick this repository.
 2. The settings come from `netlify.toml` (build command `npm run build`, publish folder `out`). Click **Deploy**.
 
-### The web address on the Help Sheet and flyer
+### The web address on the Help Sheet, flyer, and handouts
 
-The Help Sheet and the flyer's QR code show the site's address. It is chosen like this:
+The Help Sheet, the flyer, and the handouts (and their QR codes) show the site's address. It is chosen like this:
 
 1. `NEXT_PUBLIC_SITE_URL`, if you set it (for example `https://redemption.com`) in the Vercel or Netlify **Environment Variables** settings.
 2. Otherwise, the production address Vercel or Netlify gives the project.
@@ -215,7 +216,7 @@ This uses OpenStreetMap's free Nominatim service. Look at the map afterward to d
 
 ## Testing
 
-`tests/site-check.mjs` opens the built site in a real browser and checks about 180 things: every page in English and Spanish at phone to desktop widths, every city and need, ZIP codes, "Use my location", printing (the Help Sheet stays on one page), helper mode, open-now times, the map and its fallback, read aloud, privacy auto-clear, the church list, and an accessibility scan (WCAG 2 AA).
+`tests/site-check.mjs` opens the built site in a real browser and checks about 240 things: every page in English and Spanish at phone to desktop widths, every city and need, ZIP codes, "Use my location", printing (the Help Sheet stays on one page), helper mode (including that no button words get split or spill out), the handout maker (library directions, devotional, page counts for every size and language), open-now times, the map and its fallback, read aloud, privacy auto-clear, the church list, and an accessibility scan (WCAG 2 AA).
 
 ```bash
 npm run build
@@ -228,7 +229,8 @@ npm test
 
 - [Next.js](https://nextjs.org/) with static export (`output: "export"`), [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/)
 - Maps: [Leaflet](https://leafletjs.com/) with [OpenStreetMap](https://www.openstreetmap.org/copyright) tiles (no API keys). Leaflet loads only on pages that show a map. If traffic grows a lot, OpenStreetMap asks sites to switch to another tile provider.
-- QR code: made in the browser with the [`qrcode`](https://www.npmjs.com/package/qrcode) package, only on the flyer page.
+- QR code: made in the browser with the [`qrcode`](https://www.npmjs.com/package/qrcode) package, only on the flyer and handout pages.
+- Handout wording is in `lib/handout-strings.ts`; the devotionals are in `lib/devotionals.ts` (keep them short, warm, and simple, and use verses from `lib/verses.ts`).
 - Distances are measured in the browser: straight-line distance plus 25% for streets, at a walking pace of 3 miles per hour.
 - Texas ZIP code centers come from the `zipcodes` package's U.S. ZIP data (BSD license), saved as `public/tx-zips.json`.
 
