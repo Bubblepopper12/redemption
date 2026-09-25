@@ -12,6 +12,7 @@ import {
   BookOpen,
   Building2,
   Sun,
+  Hospital,
   type LucideProps,
 } from "lucide-react";
 import type { Category, NeedKey } from "@/lib/resources";
@@ -36,6 +37,7 @@ const CATEGORY_ICONS: Record<Category, React.ComponentType<LucideProps>> = {
   food: Utensils,
   church: Church,
   clinic: Stethoscope,
+  hospital: Hospital,
   "id-office": IdCard,
   jobs: Briefcase,
   veterans: Medal,

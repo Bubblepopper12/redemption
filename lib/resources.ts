@@ -1,4 +1,6 @@
-import raw from "@/data/austin-resources.json";
+import raw from "@/data/texas-resources.json";
+import type { CityId } from "./cities";
+import type { OpenSpan } from "./hours";
 
 export type NeedKey =
   | "food"
@@ -19,6 +21,7 @@ export type Category =
   | "food"
   | "church"
   | "clinic"
+  | "hospital"
   | "id-office"
   | "jobs"
   | "veterans"
@@ -28,6 +31,7 @@ type Localized = { hours?: string; notes?: string; bring?: string; serviceTimes?
 
 export type Resource = {
   id: string;
+  city: CityId;
   name: string;
   category: Category;
   helpsWith: NeedKey[];
@@ -36,6 +40,8 @@ export type Resource = {
   lng: number;
   coordsApproximate?: boolean;
   hours: string;
+  /** Regular opening times, used for the "Open now" badge. Leave out if unsure. */
+  open?: OpenSpan[];
   serviceTimes?: string;
   servesMeals?: boolean;
   phone: string;
@@ -43,11 +49,13 @@ export type Resource = {
   notes?: string;
   bring?: string;
   es?: Localized;
+  /** Which step of the Get Your ID guide this office helps with. */
+  idStep?: 1 | 2 | 3 | 4;
   lastVerified: string;
   source?: string;
 };
 
-export const resources = raw.resources as Resource[];
+export const resources = raw.resources as unknown as Resource[];
 export const dataLastReviewed = raw.lastReviewed;
 
 export const NEEDS: NeedKey[] = [

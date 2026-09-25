@@ -2,14 +2,15 @@
   "name": "redemption",
   "version": "0.1.0",
   "private": true,
-  "description": "Redemption: a free, faith-based resource finder for people experiencing homelessness in Austin, Texas.",
+  "description": "Redemption: a free, faith-based resource finder for people experiencing homelessness in Texas.",
   "scripts": {
     "dev": "next dev",
     "build": "npm run check-data && next build",
     "start": "npx serve@latest out",
     "check-data": "node scripts/check-data.mjs",
     "lint": "tsc --noEmit",
-    "geocode": "node scripts/geocode.mjs"
+    "geocode": "node scripts/geocode.mjs",
+    "test": "node tests/site-check.mjs"
   },
   "dependencies": {
     "leaflet": "1.9.4",

@@ -24,8 +24,12 @@ const points: { en: string; es: string }[] = [
     es: "Las imágenes del mapa vienen de OpenStreetMap. Su navegador le pide partes del mapa a OpenStreetMap, como cualquier sitio con mapa. No les enviamos su nombre.",
   },
   {
-    en: "On a shared computer, press “Clear my info” when you are done, then close the browser.",
-    es: "En una computadora compartida, toque “Borrar mis datos” cuando termine y cierre el navegador.",
+    en: "When you type a ZIP code, your browser downloads our list of Texas ZIP codes and finds yours on your own screen. The ZIP you type is never sent to us.",
+    es: "Cuando escribe un código postal, su navegador descarga nuestra lista de códigos postales de Texas y busca el suyo en su propia pantalla. El código que escribe nunca se nos envía.",
+  },
+  {
+    en: "On a shared computer, your info is cleared by itself after 15 minutes without use. You can also press “Clear my info” when you are done, then close the browser.",
+    es: "En una computadora compartida, sus datos se borran solos después de 15 minutos sin uso. También puede tocar “Borrar mis datos” cuando termine y cerrar el navegador.",
   },
 ];
 

@@ -8,7 +8,7 @@
 // Nominatim asks for no more than 1 request per second, so this takes about a minute.
 import { readFileSync, writeFileSync } from "node:fs";
 
-const FILE = new URL("../data/austin-resources.json", import.meta.url);
+const FILE = new URL("../data/texas-resources.json", import.meta.url);
 const write = process.argv.includes("--write");
 const all = process.argv.includes("--all");
 const data = JSON.parse(readFileSync(FILE, "utf8"));
