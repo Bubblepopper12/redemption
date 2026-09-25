@@ -216,7 +216,7 @@ This uses OpenStreetMap's free Nominatim service. Look at the map afterward to d
 
 ## Testing
 
-`tests/site-check.mjs` opens the built site in a real browser and checks about 240 things: every page in English and Spanish at phone to desktop widths, every city and need, ZIP codes, "Use my location", printing (the Help Sheet stays on one page), helper mode (including that no button words get split or spill out), the handout maker (library directions, devotional, page counts for every size and language), open-now times, the map and its fallback, read aloud, privacy auto-clear, the church list, and an accessibility scan (WCAG 2 AA).
+`tests/site-check.mjs` opens the built site in a real browser and checks about 250 things: every page in English and Spanish at phone to desktop widths, every city and need, ZIP codes, "Use my location", printing (the Help Sheet stays on one page), helper mode (including that no button words get split or spill out), the handout maker (library directions, devotional, page counts for every size and language, and that nothing is cut off the paper in any city), open-now times, the map and its fallback, read aloud, privacy auto-clear, the church list, and an accessibility scan (WCAG 2 AA).
 
 ```bash
 npm run build

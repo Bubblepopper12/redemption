@@ -62,7 +62,7 @@ export function HandoutMaker() {
       from: place,
       spot,
       library,
-      places: picked.map((h, i) => ({ ...h, num: i + 2 })),
+      places: picked,
       city: nearestCity(place),
       devotional: DEVOTIONALS.find((d) => d.id === devotionId) ?? null,
       siteUrl,

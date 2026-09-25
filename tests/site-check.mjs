@@ -127,6 +127,9 @@ const spilling = (page, selector) =>
       .map((e) => e.textContent.trim()),
   );
 
+/** Handout sheets have a fixed paper size; this finds any whose words run off the bottom. */
+const clippedSheets = (page) => page.$$eval("article", (a) => a.filter((x) => x.scrollHeight > x.clientHeight + 1).map((x) => x.lang));
+
 /** Waits up to 5 seconds for something to appear. */
 const seen = (loc, ms = 5000) => loc.first().waitFor({ state: "visible", timeout: ms }).then(() => true, () => false);
 
@@ -491,6 +494,11 @@ for (const [width, lang] of [[1280, "en"], [1024, "en"], [768, "es"], [375, "en"
   check(/Trinity Center|ARCH|LifeWorks/.test(text), "handouts: lists help near the spot");
   check(/2-1-1/.test(text) && /988/.test(text), "handouts: 2-1-1 and crisis numbers");
   check(await seen(page.locator("article [role=img][aria-label^='QR code'] svg")), "handouts: QR code drawn");
+  check((await page.locator("article svg[aria-label='Simple map'], article .leaflet-container").count()) === 0, "handouts: no map (simpler to read and print)");
+  check(!/Call to confirm · Call to confirm/.test(text), "handouts: no repeated 'Call to confirm'");
+  check((await clippedSheets(page)).length === 0, "handouts: nothing cut off the full flyer");
+  const fit = await sheet.getAttribute("data-fit");
+  check(Number(fit) >= 0.95, "handouts: the usual flyer prints at (nearly) full size", `fit ${fit}`);
   await axe(page, "handout preview");
   await page.emulateMedia({ media: "print" });
   check((await pdfPages(page)) === 1, "handouts: one full flyer prints on one page");
@@ -507,6 +515,7 @@ for (const [width, lang] of [[1280, "en"], [1024, "en"], [768, "es"], [375, "en"
   const langs = await page.$$eval("article", (a) => a.map((x) => x.lang));
   check(langs.join() === "en,es", "handouts: one English and one Spanish", langs.join());
   check(await seen(page.getByText("Usted es amado. No está solo.")), "handouts: Spanish flyer is in Spanish");
+  check((await clippedSheets(page)).length === 0, "handouts: nothing cut off the half flyers");
   await page.emulateMedia({ media: "print" });
   check((await pdfPages(page)) === 1, "handouts: two half flyers fit on one page");
   await page.emulateMedia({ media: "screen" });
@@ -565,6 +574,34 @@ for (const [width, lang] of [[1280, "en"], [1024, "en"], [768, "es"], [375, "en"
   await page.getByRole("button", { name: "Hacer mi volante" }).click();
   const langs = await page.$$eval("article", (a) => a.map((x) => x.lang));
   check(langs.join() === "es", "handouts: Spanish site makes a Spanish flyer by default", langs.join());
+  await page.context().close();
+}
+{
+  // The longest flyers: every city, 4 needs, both languages, both sizes. Nothing may be cut off.
+  const page = await newPage();
+  await page.goto(BASE + "/handout/");
+  const spots = await page.$$eval("select optgroup", (g) => g.map((x) => x.querySelector("option").value));
+  await page.getByRole("button", { name: /^Showers/ }).click();
+  await page.getByRole("button", { name: /^Medical/ }).click();
+  await page.getByRole("button", { name: /^Legal/ }).click();
+  await page.getByRole("radio", { name: /^Both/ }).check();
+  const cut = [];
+  const fits = [];
+  for (const spot of spots) {
+    for (const size of [/1 big flyer/, /2 flyers per page/]) {
+      if (await page.getByRole("button", { name: "Change", exact: true }).isVisible()) await page.getByRole("button", { name: "Change", exact: true }).click();
+      await page.locator("select").first().selectOption(spot);
+      await page.getByLabel("Name of this spot").fill("The bus stop at the corner of 7th and Main");
+      await page.getByRole("radio", { name: size }).check();
+      await page.getByRole("button", { name: "Make my handout" }).click();
+      await page.waitForSelector("article");
+      for (const l of await clippedSheets(page)) cut.push(`${spot} ${size.source} ${l}`);
+      fits.push(...(await page.$$eval("article", (a) => a.map((x) => Number(x.dataset.fit)))));
+      await page.getByRole("button", { name: "Change answers" }).click();
+    }
+  }
+  check(cut.length === 0, `handouts: nothing cut off in any city (${spots.length} cities × 2 sizes × 2 languages)`, cut.join(", "));
+  check(Math.min(...fits) >= 0.85, "handouts: even the longest flyer stays at least 85% size", `smallest ${Math.min(...fits)}`);
   await page.context().close();
 }
 
