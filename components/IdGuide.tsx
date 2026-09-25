@@ -3,10 +3,33 @@
 import { useState, type ReactNode } from "react";
 import { BadgeDollarSign, CheckCircle2, Circle, FileText, HandHelping, MapPin, Printer } from "lucide-react";
 import { resources } from "@/lib/resources";
+import { CITIES, CITY_BY_ID, type CityId } from "@/lib/cities";
 import { Card, Ext, L, PageTitle } from "./L";
 import { ResourceCard } from "./ResourceCard";
 
-const byId = (id: string) => resources.find((r) => r.id === id)!;
+/** When a city has no office listed for a step, point to the official office finder. */
+const FALLBACK: Record<number, { href: string; en: string; es: string }> = {
+  1: {
+    href: "https://www.dshs.texas.gov/vital-statistics/order-records-locally",
+    en: "Find a local birth records office (your county clerk or city registrar), or use Texas Vital Statistics in Austin.",
+    es: "Busque una oficina local de actas (la secretaría del condado o de la ciudad), o use Estadísticas Vitales de Texas en Austin.",
+  },
+  2: {
+    href: "https://www.ssa.gov/locator",
+    en: "Find your nearest Social Security office, or call 1-800-772-1213.",
+    es: "Busque la oficina del Seguro Social más cercana, o llame al 1-800-772-1213.",
+  },
+  3: {
+    href: "https://www.dps.texas.gov/apps/DriverLicense/OfficeLocations",
+    en: "Find your nearest Texas DPS driver license office. Book an appointment or call 512-424-2600.",
+    es: "Busque la oficina de licencias de DPS más cercana. Haga una cita o llame al 512-424-2600.",
+  },
+  4: {
+    href: "https://iafdb.travel.state.gov/",
+    en: "Find a passport office near you (many post offices and libraries accept applications).",
+    es: "Busque una oficina de pasaportes cerca (muchas oficinas de correo y bibliotecas reciben solicitudes).",
+  },
+};
 
 /**
  * Step-by-step ID checklist. The check boxes only live on this screen,
@@ -14,6 +37,8 @@ const byId = (id: string) => resources.find((r) => r.id === id)!;
  */
 export function IdGuide() {
   const [done, setDone] = useState<Record<number, boolean>>({});
+  const [cityId, setCityId] = useState<CityId>("austin");
+  const helpers = resources.filter((r) => r.city === cityId && r.category === "day-center" && r.helpsWith.includes("id"));
 
   return (
     <>
@@ -25,15 +50,52 @@ export function IdGuide() {
       />
 
       <div className="mx-auto grid max-w-4xl gap-6 px-4 pb-10">
+        <Card className="border-primary bg-primary-soft print:hidden">
+          <label htmlFor="id-city" className="block text-xl font-bold text-ink">
+            <L en="Which city are you in?" es="¿En qué ciudad está?" />
+          </label>
+          <select
+            id="id-city"
+            value={cityId}
+            onChange={(e) => setCityId(e.target.value as CityId)}
+            className="mt-2 min-h-14 w-full rounded-2xl border-2 border-primary bg-paper px-4 text-xl font-semibold"
+          >
+            {CITIES.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
+            ))}
+          </select>
+          <p className="mt-2 text-base text-muted">
+            <L
+              en="The steps and rules are the same everywhere in Texas. We use your city to show the closest offices."
+              es="Los pasos y las reglas son iguales en todo Texas. Usamos su ciudad para mostrar las oficinas más cercanas."
+            />
+          </p>
+        </Card>
+
         <Card className="border-hope bg-hope-soft">
           <h2 className="flex items-center gap-2 text-2xl font-bold text-ink">
             <HandHelping className="h-7 w-7 text-hope" aria-hidden="true" />
-            <L en="Free help with IDs" es="Ayuda gratis con identificaciones" />
+            <L en={`Free help with IDs in ${CITY_BY_ID[cityId].name}`} es={`Ayuda gratis con identificaciones en ${CITY_BY_ID[cityId].name}`} />
           </h2>
-          <p className="mt-2 text-lg">
+          {helpers.length > 0 ? (
+            <ul className="mt-3 grid gap-2 text-lg">
+              {helpers.map((r) => (
+                <li key={r.id}>
+                  <strong>{r.name}</strong> — {r.address} · {r.phone}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-2 text-lg">
+              <L en="Call 2-1-1 and ask who helps people get IDs near you." es="Llame al 2-1-1 y pregunte quién ayuda a sacar identificaciones cerca de usted." />
+            </p>
+          )}
+          <p className="mt-3 text-lg">
             <L
-              en="Trinity Center (304 E. 7th St., 512-610-3500) and Sunrise (4430 Menchaca Rd., 512-368-2685) help people get IDs, and both can receive mail for you. Your new Texas ID card is mailed to you, so you will need a mailing address."
-              es="Trinity Center (304 E. 7th St., 512-610-3500) y Sunrise (4430 Menchaca Rd., 512-368-2685) ayudan a sacar identificaciones, y los dos pueden recibir correo por usted. Su nueva tarjeta de Texas llega por correo, así que necesitará una dirección para recibir correo."
+              en="Your new Texas ID card comes in the mail, so you will need a mailing address. Many day centers and shelters can receive mail for you. Ask them."
+              es="Su nueva tarjeta de Texas llega por correo, así que necesitará una dirección. Muchos centros de día y refugios pueden recibir correo por usted. Pregunte."
             />
           </p>
           <button
@@ -72,8 +134,8 @@ export function IdGuide() {
           }
           cost={
             <L
-              en="$23 per copy at the Austin Office of Vital Records (for people born in Austin). Call Texas Vital Statistics to confirm the state fee. Paying by card in person at the state office adds $2.25."
-              es="$23 por copia en la Oficina de Registros Vitales de Austin (para personas nacidas en Austin). Llame a Estadísticas Vitales de Texas para confirmar el costo estatal. Pagar con tarjeta en persona en la oficina estatal cuesta $2.25 más."
+              en="Usually about $23 per copy. For example, the Austin and San Antonio city offices charge $23. Call your office to confirm. Paying by card in person at the state office in Austin adds $2.25."
+              es="Por lo general unos $23 por copia. Por ejemplo, las oficinas de las ciudades de Austin y San Antonio cobran $23. Llame a su oficina para confirmar. Pagar con tarjeta en persona en la oficina estatal en Austin cuesta $2.25 más."
             />
           }
           free={
@@ -114,7 +176,7 @@ export function IdGuide() {
               }
             />
           }
-          offices={["vital-stats-state", "austin-vital-records"]}
+          cityId={cityId}
           sources={[
             ["https://www.dshs.texas.gov/vital-statistics/birth-records", "Texas DSHS: Birth Records"],
             ["https://www.dshs.texas.gov/sites/default/files/vs/doc/Certification-of-Homeless-Status-for-Texas-Birth-Certificate.pdf", "DSHS: Certification of Homeless Status form"],
@@ -144,7 +206,7 @@ export function IdGuide() {
               es="Si tiene 18 años o más, es ciudadano de EE. UU. y ya tiene una identificación estatal, tal vez pueda pedir la tarjeta en línea en ssa.gov."
             />
           }
-          offices={["ssa-austin"]}
+          cityId={cityId}
           sources={[
             ["https://www.ssa.gov/number-card/replace-card", "SSA: Replace your Social Security card"],
             ["https://oig.ssa.gov/scam-alerts/2026-03-10-ssa-provides-new-and-replacement-social-security-cards-for-free/", "SSA Inspector General: cards are free"],
@@ -227,7 +289,7 @@ export function IdGuide() {
               }
             />
           }
-          offices={["dps-north-lamar", "dps-austin-south"]}
+          cityId={cityId}
           sources={[
             ["https://www.dps.texas.gov/section/driver-license/how-apply-texas-identification-card", "DPS: How to apply for a Texas ID card"],
             ["https://www.dps.texas.gov/section/driver-license/identification-requirements", "DPS: Identification requirements"],
@@ -246,18 +308,18 @@ export function IdGuide() {
           titleEs="Pasaporte de EE. UU. (opcional)"
           need={
             <L
-              en="Most people do not need a passport. It is the strongest ID, but it costs the most. You need your birth certificate, your ID, a photo, and form DS-11. The Austin Public Library accepts passport applications by appointment only. Appointments open 3 days ahead. No walk-ins, and you cannot book by phone."
-              es="La mayoría no necesita pasaporte. Es la identificación más fuerte, pero cuesta más. Necesita su acta de nacimiento, su identificación, una foto y el formulario DS-11. La Biblioteca Pública de Austin recibe solicitudes solo con cita. Las citas se abren 3 días antes. No se aceptan visitas sin cita y no se puede hacer cita por teléfono."
+              en="Most people do not need a passport. It is the strongest ID, but it costs the most. You need your birth certificate, your ID, a photo, and form DS-11. Many post offices and some libraries accept passport applications. In Austin, the Central Library and Ruiz Branch do, by appointment only. Appointments open 3 days ahead, with no walk-ins."
+              es="La mayoría no necesita pasaporte. Es la identificación más fuerte, pero cuesta más. Necesita su acta de nacimiento, su identificación, una foto y el formulario DS-11. Muchas oficinas de correo y algunas bibliotecas reciben solicitudes. En Austin, la Biblioteca Central y la sucursal Ruiz las reciben solo con cita. Las citas se abren 3 días antes, sin visitas sin cita."
             />
           }
           cost={
             <L
-              en="The U.S. government passport fee (see travel.state.gov), plus a $35 acceptance fee and an $18 photo fee at the library. The library takes card, check, or money order. No cash."
-              es="El pago del gobierno de EE. UU. por el pasaporte (vea travel.state.gov), más $35 de aceptación y $18 por la foto en la biblioteca. La biblioteca acepta tarjeta, cheque o giro postal. No efectivo."
+              en="The U.S. government passport fee (see travel.state.gov), plus an acceptance fee. At the Austin Public Library that is $35, plus $18 for a photo, paid by card, check, or money order (no cash)."
+              es="El pago del gobierno de EE. UU. por el pasaporte (vea travel.state.gov), más un cargo de aceptación. En la Biblioteca Pública de Austin son $35, más $18 por la foto, con tarjeta, cheque o giro postal (no efectivo)."
             />
           }
           free={<L en="There is no general fee waiver for passports." es="No hay exención general de pago para pasaportes." />}
-          offices={["apl-central", "apl-ruiz"]}
+          cityId={cityId}
           sources={[
             ["https://library.austintexas.gov/passports", "Austin Public Library: Passport services"],
             ["https://travel.state.gov/content/travel/en/passports.html", "U.S. State Department: Passports"],
@@ -284,7 +346,7 @@ function Step({
   need,
   cost,
   free,
-  offices,
+  cityId,
   sources,
 }: {
   n: number;
@@ -295,9 +357,10 @@ function Step({
   need: ReactNode;
   cost: ReactNode;
   free: ReactNode;
-  offices: string[];
+  cityId: CityId;
   sources: [string, string][];
 }) {
+  const offices = resources.filter((r) => r.idStep === n && r.city === cityId);
   return (
     <Card className="print-avoid-break">
       <div className="flex flex-wrap items-center gap-4">
@@ -332,13 +395,20 @@ function Step({
           {free}
         </Part>
         <Part icon={<MapPin className="h-6 w-6" aria-hidden="true" />} en="Where to go" es="Adónde ir">
-          <ul className="mt-2 grid gap-3">
-            {offices.map((id) => (
-              <li key={id}>
-                <ResourceCard r={byId(id)} compact />
-              </li>
-            ))}
-          </ul>
+          {offices.length > 0 && (
+            <ul className="mt-2 grid gap-3">
+              {offices.map((r) => (
+                <li key={r.id}>
+                  <ResourceCard r={r} compact />
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-3">
+            <Ext href={FALLBACK[n].href}>
+              <L en={FALLBACK[n].en} es={FALLBACK[n].es} />
+            </Ext>
+          </p>
         </Part>
       </div>
 

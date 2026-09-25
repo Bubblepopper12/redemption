@@ -37,7 +37,14 @@ export function ReadAloud({ className = "" }: { className?: string }) {
     }
     const main = document.getElementById("main");
     if (!main) return;
-    const text = main.innerText.replace(/\s+\n/g, "\n").trim();
+    // Skip parts that make no sense out loud (like the map).
+    const copy = main.cloneNode(true) as HTMLElement;
+    copy.querySelectorAll("[data-noread], script, style, noscript").forEach((n) => n.remove());
+    copy.style.position = "fixed";
+    copy.style.left = "-9999px";
+    document.body.appendChild(copy);
+    const text = copy.innerText.replace(/\s+\n/g, "\n").trim();
+    copy.remove();
     // Some browsers stop long speech early, so we read one sentence at a time.
     const chunks = text
       .replace(/([.!?:])\s+/g, "$1\n")

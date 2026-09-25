@@ -1,0 +1,3433 @@
+{
+  "state": "Texas",
+  "lastReviewed": "2026-09-25",
+  "howToEdit": "See README.md, section 'How to add or update a location'. Every entry needs id, city, name, category, helpsWith, address, lat, lng, hours, phone, lastVerified. If you cannot confirm hours, write 'Call to confirm'.",
+  "resources": [
+    {
+      "id": "apl-central",
+      "city": "austin",
+      "name": "Austin Central Library",
+      "category": "library",
+      "helpsWith": [
+        "internet",
+        "id"
+      ],
+      "address": "710 W. Cesar Chavez St., Austin, TX 78701",
+      "lat": 30.26578,
+      "lng": -97.75193,
+      "coordsApproximate": false,
+      "hours": "Sun 12–5 pm · Mon–Thu 9 am–8 pm · Fri 9 am–5 pm · Sat 10 am–5 pm",
+      "open": [
+        {
+          "days": [
+            0
+          ],
+          "from": "12:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "09:00",
+          "to": "20:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "10:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/central-library",
+      "notes": "Free computers, free Wi-Fi, and phone charging. Ask for a Guest Pass to use a computer without a library card. Passport office on the 2nd floor, Room 207 (by appointment only, 512-974-9639).",
+      "bring": "Nothing needed to come in. For a library card: a photo ID (can be expired up to 1 year) and proof of address. A signed letter from a shelter, clinic, or church works as proof of address.",
+      "idStep": 4,
+      "es": {
+        "hours": "Dom 12–5 pm · Lun–Jue 9 am–8 pm · Vie 9 am–5 pm · Sáb 10 am–5 pm",
+        "notes": "Computadoras gratis, Wi-Fi gratis y lugar para cargar el teléfono. Pida un Pase de Invitado para usar una computadora sin tarjeta. Oficina de pasaportes en el 2.º piso, Sala 207 (solo con cita, 512-974-9639).",
+        "bring": "No necesita nada para entrar. Para una tarjeta de biblioteca: identificación con foto (puede estar vencida hasta 1 año) y comprobante de domicilio. Una carta firmada de un refugio, clínica o iglesia sirve como comprobante."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/central-library"
+    },
+    {
+      "id": "apl-carver",
+      "city": "austin",
+      "name": "Carver Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "1161 Angelina St., Austin, TX 78702",
+      "lat": 30.2697,
+      "lng": -97.7238,
+      "coordsApproximate": true,
+      "hours": "Sun closed · Mon–Thu 9 am–8 pm · Fri 9 am–5 pm · Sat 10 am–5 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "09:00",
+          "to": "20:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "10:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "512-974-1010",
+      "website": "https://library.austintexas.gov/carver-branch",
+      "notes": "Free computers and free Wi-Fi.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Dom cerrado · Lun–Jue 9 am–8 pm · Vie 9 am–5 pm · Sáb 10 am–5 pm",
+        "notes": "Computadoras gratis y Wi-Fi gratis.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/carver-branch"
+    },
+    {
+      "id": "apl-ruiz",
+      "city": "austin",
+      "name": "Ruiz Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet",
+        "id"
+      ],
+      "address": "1600 Grove Blvd., Austin, TX 78741",
+      "lat": 30.22985,
+      "lng": -97.7071,
+      "coordsApproximate": false,
+      "hours": "Sun 12–5 pm · Mon–Thu 9 am–8 pm · Fri 9 am–5 pm · Sat 10 am–5 pm",
+      "open": [
+        {
+          "days": [
+            0
+          ],
+          "from": "12:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "09:00",
+          "to": "20:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "10:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "512-974-7526",
+      "website": "https://library.austintexas.gov/ruiz-branch",
+      "notes": "Free computers and free Wi-Fi. Has a passport office (by appointment only).",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "idStep": 4,
+      "es": {
+        "hours": "Dom 12–5 pm · Lun–Jue 9 am–8 pm · Vie 9 am–5 pm · Sáb 10 am–5 pm",
+        "notes": "Computadoras gratis y Wi-Fi gratis. Tiene oficina de pasaportes (solo con cita).",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/ruiz-branch"
+    },
+    {
+      "id": "apl-terrazas",
+      "city": "austin",
+      "name": "Terrazas Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "1105 E. Cesar Chavez St., Austin, TX 78702",
+      "lat": 30.2596,
+      "lng": -97.733,
+      "coordsApproximate": true,
+      "hours": "Mon–Thu 9 am–8 pm · Fri 9 am–5 pm · Sat and Sun closed",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "09:00",
+          "to": "20:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "09:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/terrazas-branch",
+      "notes": "Free computers and free Wi-Fi. Phone number is the main library line.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Lun–Jue 9 am–8 pm · Vie 9 am–5 pm · Sáb y Dom cerrado",
+        "notes": "Computadoras gratis y Wi-Fi gratis. El teléfono es la línea principal de la biblioteca.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/terrazas-branch"
+    },
+    {
+      "id": "apl-twin-oaks",
+      "city": "austin",
+      "name": "Twin Oaks Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "1800 S. 5th St., Austin, TX 78704",
+      "lat": 30.2482,
+      "lng": -97.7607,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/twin-oaks-branch",
+      "notes": "Free computers and free Wi-Fi. Phone number is the main library line.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Computadoras gratis y Wi-Fi gratis. El teléfono es la línea principal de la biblioteca.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/twin-oaks-branch"
+    },
+    {
+      "id": "apl-windsor-park",
+      "city": "austin",
+      "name": "Windsor Park Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "5833 Westminster Dr., Austin, TX 78723",
+      "lat": 30.3127,
+      "lng": -97.689,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/windsor-park-branch",
+      "notes": "Free computers and free Wi-Fi. Phone number is the main library line.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Computadoras gratis y Wi-Fi gratis. El teléfono es la línea principal de la biblioteca.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/windsor-park-branch"
+    },
+    {
+      "id": "apl-southeast",
+      "city": "austin",
+      "name": "Southeast Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "5803 Nuckols Crossing Rd., Austin, TX 78744",
+      "lat": 30.1887,
+      "lng": -97.7395,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/southeast-branch",
+      "notes": "Free computers and free Wi-Fi. Phone number is the main library line.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Computadoras gratis y Wi-Fi gratis. El teléfono es la línea principal de la biblioteca.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/southeast-branch"
+    },
+    {
+      "id": "apl-st-john",
+      "city": "austin",
+      "name": "St. John Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "7500 Blessing Ave., Austin, TX 78752",
+      "lat": 30.3335,
+      "lng": -97.6935,
+      "coordsApproximate": true,
+      "hours": "Sun closed · Mon–Thu 9 am–8 pm · Fri 9 am–5 pm · Sat 10 am–4 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "09:00",
+          "to": "20:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "10:00",
+          "to": "16:00"
+        }
+      ],
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/st-john-branch",
+      "notes": "Free computers and free Wi-Fi. Phone number is the main library line.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Dom cerrado · Lun–Jue 9 am–8 pm · Vie 9 am–5 pm · Sáb 10 am–4 pm",
+        "notes": "Computadoras gratis y Wi-Fi gratis. El teléfono es la línea principal de la biblioteca.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/st-john-branch"
+    },
+    {
+      "id": "apl-little-walnut-creek",
+      "city": "austin",
+      "name": "Little Walnut Creek Branch Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "835 W. Rundberg Ln., Austin, TX 78758",
+      "lat": 30.3622,
+      "lng": -97.6985,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "512-974-7400",
+      "website": "https://library.austintexas.gov/little-walnut-creek-branch",
+      "notes": "Free computers and free Wi-Fi. Phone number is the main library line.",
+      "bring": "Nothing needed to come in. Ask for a Guest Pass to use a computer.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Computadoras gratis y Wi-Fi gratis. El teléfono es la línea principal de la biblioteca.",
+        "bring": "No necesita nada para entrar. Pida un Pase de Invitado para usar una computadora."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://library.austintexas.gov/little-walnut-creek-branch"
+    },
+    {
+      "id": "arch",
+      "city": "austin",
+      "name": "The ARCH (Austin Resource Center for the Homeless)",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter"
+      ],
+      "address": "500 E. 7th St., Austin, TX 78701",
+      "lat": 30.26793,
+      "lng": -97.73762,
+      "coordsApproximate": false,
+      "hours": "Shelter beds by referral. To ask for a bed, call Sunrise at 512-522-1097, Mon–Fri 8 am–8 pm.",
+      "phone": "512-522-1097",
+      "website": "https://www.austintexas.gov/homeless-strategies/shelters",
+      "notes": "Adult men's shelter run by Urban Alchemy for the City of Austin. It is not a walk-up shelter. Drinking water, phone charging, and restrooms are open to everyone. A CommUnityCare health clinic is inside.",
+      "bring": "Any ID you have. It is okay if you have no ID.",
+      "es": {
+        "hours": "Camas por referencia. Para pedir una cama, llame a Sunrise al 512-522-1097, Lun–Vie 8 am–8 pm.",
+        "notes": "Refugio para hombres adultos operado por Urban Alchemy para la Ciudad de Austin. No se puede llegar sin referencia. Agua, carga de teléfono y baños abiertos para todos. Hay una clínica CommUnityCare adentro.",
+        "bring": "Cualquier identificación que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.austintexas.gov/homeless-strategies/shelters"
+    },
+    {
+      "id": "sa-women-children",
+      "city": "austin",
+      "name": "Salvation Army Austin Shelter for Women and Children",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter"
+      ],
+      "address": "4523 Tannehill Ln., Austin, TX 78721",
+      "lat": 30.2662,
+      "lng": -97.6912,
+      "coordsApproximate": true,
+      "hours": "Call first: 512-933-0600",
+      "phone": "512-933-0600",
+      "website": "https://salvationarmyaustin.org/texas-austin/womenshelter/",
+      "notes": "Emergency shelter for single women and women with children. Case management, job help, and child care resources. The Salvation Army is a Christian church; help is open to all.",
+      "bring": "Any ID you have for you and your children. Call before you go.",
+      "es": {
+        "hours": "Llame primero: 512-933-0600",
+        "notes": "Refugio de emergencia para mujeres solas y mujeres con hijos. Manejo de casos, ayuda con empleo y cuidado de niños. El Ejército de Salvación es una iglesia cristiana; la ayuda es para todos.",
+        "bring": "Cualquier identificación suya y de sus hijos. Llame antes de ir."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://salvationarmyaustin.org/texas-austin/womenshelter/"
+    },
+    {
+      "id": "sa-rathgeber",
+      "city": "austin",
+      "name": "Salvation Army Rathgeber Center for Families",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter"
+      ],
+      "address": "4613 Tannehill Ln., Austin, TX 78721",
+      "lat": 30.2668,
+      "lng": -97.6898,
+      "coordsApproximate": true,
+      "hours": "Office: Mon–Fri 9 am–5 pm",
+      "phone": "737-256-6926",
+      "website": "https://salvationarmyaustin.org/texas-austin/rathgeber-center-for-families/",
+      "notes": "Shelter for families with children. Every family gets a case manager.",
+      "bring": "Any ID you have for you and your children. Call before you go.",
+      "es": {
+        "hours": "Oficina: Lun–Vie 9 am–5 pm",
+        "notes": "Refugio para familias con hijos. Cada familia tiene un administrador de caso.",
+        "bring": "Cualquier identificación suya y de sus hijos. Llame antes de ir."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://salvationarmyaustin.org/texas-austin/rathgeber-center-for-families/"
+    },
+    {
+      "id": "lifeworks-yrc",
+      "city": "austin",
+      "name": "LifeWorks Youth Resource Center (ages 16–26)",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food",
+        "showers"
+      ],
+      "address": "835 N. Pleasant Valley Rd., Austin, TX 78702",
+      "lat": 30.2638,
+      "lng": -97.7046,
+      "coordsApproximate": true,
+      "hours": "Mon–Thu 12–4 pm. Walk in, no appointment.",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "12:00",
+          "to": "16:00"
+        }
+      ],
+      "phone": "512-735-2100",
+      "website": "https://www.lifeworksaustin.org/housing-basic-needs/basic-needs",
+      "notes": "Drop-in center for young people ages 16 to 26 without a safe place to stay. Help with basic needs and housing.",
+      "bring": "Nothing required. Come as you are.",
+      "es": {
+        "hours": "Lun–Jue 12–4 pm. Sin cita.",
+        "notes": "Centro para jóvenes de 16 a 26 años sin un lugar seguro donde quedarse. Ayuda con necesidades básicas y vivienda.",
+        "bring": "Nada es necesario. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.lifeworksaustin.org/housing-basic-needs/basic-needs"
+    },
+    {
+      "id": "trinity-center",
+      "city": "austin",
+      "name": "Trinity Center",
+      "category": "day-center",
+      "helpsWith": [
+        "showers",
+        "food",
+        "id",
+        "internet"
+      ],
+      "address": "304 E. 7th St., Austin, TX 78701",
+      "lat": 30.2685,
+      "lng": -97.7402,
+      "coordsApproximate": true,
+      "hours": "Day center opens around 9 am. Call Mon–Fri 10 am–1 pm to confirm.",
+      "phone": "512-610-3500",
+      "website": "https://stdave.org/ministries/community-engagement/",
+      "notes": "A ministry at St. David's Episcopal Church. Showers, clothing, breakfast to go, mail service, bus passes, phone and computer use, and help getting an ID.",
+      "bring": "Nothing required. Bring any papers you have if you want ID help.",
+      "es": {
+        "hours": "El centro abre alrededor de las 9 am. Llame Lun–Vie 10 am–1 pm para confirmar.",
+        "notes": "Un ministerio de la Iglesia Episcopal St. David's. Duchas, ropa, desayuno para llevar, servicio de correo, pases de autobús, uso de teléfono y computadora, y ayuda para sacar una identificación.",
+        "bring": "Nada es necesario. Traiga los papeles que tenga si quiere ayuda con su identificación."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://stdave.org/ministries/community-engagement/"
+    },
+    {
+      "id": "sunrise-hub",
+      "city": "austin",
+      "name": "Sunrise Homeless Navigation Center (Sunrise Hub)",
+      "category": "day-center",
+      "helpsWith": [
+        "food",
+        "showers",
+        "id",
+        "internet",
+        "medical",
+        "shelter"
+      ],
+      "address": "4430 Menchaca Rd., Austin, TX 78745",
+      "lat": 30.2268,
+      "lng": -97.7869,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 9 am–1 pm (line starts about 8 am). Hotline: call or text 512-522-1097.",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "09:00",
+          "to": "13:00"
+        }
+      ],
+      "phone": "512-368-2685",
+      "website": "https://sunrisenavigationcenter.org/get-help",
+      "notes": "Day center at Sunrise Community Church. Meals, showers, laundry, mail, IDs, benefits sign-up, computer lab, health clinic, and help finding housing. This is also where you ask for a shelter bed in Austin.",
+      "bring": "Nothing required. Bring any ID or papers you have.",
+      "es": {
+        "hours": "Lun–Vie 9 am–1 pm (la fila empieza como a las 8 am). Línea de ayuda: llame o mande texto al 512-522-1097.",
+        "notes": "Centro de día en Sunrise Community Church. Comidas, duchas, lavandería, correo, identificaciones, inscripción a beneficios, computadoras, clínica de salud y ayuda para encontrar vivienda. Aquí también se pide una cama en un refugio de Austin.",
+        "bring": "Nada es necesario. Traiga cualquier identificación o papeles que tenga."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://sunrisenavigationcenter.org/sunrise-hub"
+    },
+    {
+      "id": "caritas",
+      "city": "austin",
+      "name": "Caritas of Austin",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "611 Neches St., Austin, TX 78701",
+      "lat": 30.2678,
+      "lng": -97.7384,
+      "coordsApproximate": true,
+      "hours": "Kitchen closed for repairs. Reopens October 8, 2026. Call to confirm.",
+      "phone": "512-479-4610",
+      "website": "https://caritasofaustin.org/what-we-do/food/",
+      "notes": "Free hot lunch on weekdays when the kitchen is open. Also food pantry, case management, and housing help.",
+      "bring": "Nothing required for a meal.",
+      "es": {
+        "hours": "Cocina cerrada por reparaciones. Reabre el 8 de octubre de 2026. Llame para confirmar.",
+        "notes": "Almuerzo caliente gratis entre semana cuando la cocina está abierta. También despensa, manejo de casos y ayuda con vivienda.",
+        "bring": "No necesita nada para comer."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://caritasofaustin.org/"
+    },
+    {
+      "id": "micah6",
+      "city": "austin",
+      "name": "Micah 6 Food Pantry (at University Presbyterian Church)",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "2203 San Antonio St., Austin, TX 78705",
+      "lat": 30.2862,
+      "lng": -97.7442,
+      "coordsApproximate": true,
+      "hours": "Thu 5:30–7 pm · Sat 9:30–11 am",
+      "open": [
+        {
+          "days": [
+            4
+          ],
+          "from": "17:30",
+          "to": "19:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "09:30",
+          "to": "11:00"
+        }
+      ],
+      "phone": "512-476-5321",
+      "website": "https://www.micah6austin.org/food-pantry",
+      "notes": "Free groceries once a week. No appointment needed. Run by churches near UT.",
+      "bring": "Nothing required. Bring a bag if you have one.",
+      "es": {
+        "hours": "Jue 5:30–7 pm · Sáb 9:30–11 am",
+        "notes": "Comida gratis una vez por semana. No necesita cita. Organizado por iglesias cerca de UT.",
+        "bring": "Nada es necesario. Traiga una bolsa si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.micah6austin.org/food-pantry"
+    },
+    {
+      "id": "manos-de-cristo",
+      "city": "austin",
+      "name": "Manos de Cristo",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "4911 Harmon Ave., Austin, TX 78751",
+      "lat": 30.3137,
+      "lng": -97.7175,
+      "coordsApproximate": true,
+      "hours": "Food pantry: Mon–Fri 8–11 am (curbside) · Clothes closet: Tue–Thu 8–11 am",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "11:00"
+        }
+      ],
+      "phone": "512-477-7454",
+      "website": "https://manosdecristo.org/need-our-help/basic-needs/",
+      "notes": "Christian ministry with a food pantry and clothes closet. You can visit once every two months.",
+      "bring": "Call to ask what to bring to sign up.",
+      "es": {
+        "hours": "Despensa: Lun–Vie 8–11 am (en la acera) · Ropero: Mar–Jue 8–11 am",
+        "notes": "Ministerio cristiano con despensa de comida y ropero. Puede visitar una vez cada dos meses.",
+        "bring": "Llame para preguntar qué traer para inscribirse."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://manosdecristo.org/need-our-help/basic-needs/"
+    },
+    {
+      "id": "el-buen-samaritano",
+      "city": "austin",
+      "name": "El Buen Samaritano",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "7000 Woodhue Dr., Austin, TX 78745",
+      "lat": 30.199,
+      "lng": -97.804,
+      "coordsApproximate": true,
+      "hours": "Food pantry: Tue and Thu 8:30–10:30 am. Closed holidays.",
+      "open": [
+        {
+          "days": [
+            2,
+            4
+          ],
+          "from": "08:30",
+          "to": "10:30"
+        }
+      ],
+      "phone": "512-439-8900",
+      "website": "https://elbuen.org/contact-us-location/",
+      "notes": "Episcopal ministry. The food pantry is drive-through. Call to ask about walking up.",
+      "bring": "Call to ask what to bring.",
+      "es": {
+        "hours": "Despensa: Mar y Jue 8:30–10:30 am. Cerrado días festivos.",
+        "notes": "Ministerio episcopal. La despensa es en auto. Llame para preguntar si puede llegar a pie.",
+        "bring": "Llame para preguntar qué traer."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://elbuen.org/contact-us-location/"
+    },
+    {
+      "id": "svdp-braker",
+      "city": "austin",
+      "name": "St. Vincent de Paul Food Pantry",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "901 W. Braker Ln., Austin, TX 78758",
+      "lat": 30.3838,
+      "lng": -97.6915,
+      "coordsApproximate": true,
+      "hours": "Pantry: Sat 8–11 am · Emergency food boxes: Tue–Thu 9–11 am",
+      "open": [
+        {
+          "days": [
+            2,
+            3,
+            4
+          ],
+          "from": "09:00",
+          "to": "11:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "08:00",
+          "to": "11:00"
+        }
+      ],
+      "phone": "512-251-6995",
+      "website": "https://ssvdp.org/client-services",
+      "notes": "Catholic charity in North Austin. Fresh produce, meat, bread, and canned food.",
+      "bring": "Call to ask what to bring.",
+      "es": {
+        "hours": "Despensa: Sáb 8–11 am · Cajas de comida de emergencia: Mar–Jue 9–11 am",
+        "notes": "Caridad católica en el norte de Austin. Frutas y verduras, carne, pan y comida enlatada.",
+        "bring": "Llame para preguntar qué traer."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://ssvdp.org/client-services"
+    },
+    {
+      "id": "cuc-arch",
+      "city": "austin",
+      "name": "CommUnityCare Clinic at the ARCH",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "500 E. 7th St., Austin, TX 78701",
+      "lat": 30.2678,
+      "lng": -97.73745,
+      "coordsApproximate": false,
+      "hours": "Mon–Fri 7:30–11:30 am and 12:30–4:30 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "07:30",
+          "to": "11:30"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "12:30",
+          "to": "16:30"
+        }
+      ],
+      "phone": "512-978-9920",
+      "website": "https://communitycaretx.org/all-locations/austin-resource-center-for-the-homeless-clinic/",
+      "notes": "Health care for people experiencing homelessness. Walk-ins welcome. Check-ups, wound care, medicine refills, mental health care, and help signing up for MAP (Travis County health coverage).",
+      "bring": "Any ID and medicine bottles you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Vie 7:30–11:30 am y 12:30–4:30 pm",
+        "notes": "Atención médica para personas sin hogar. Se aceptan visitas sin cita. Chequeos, heridas, recetas, salud mental y ayuda para inscribirse en MAP (cobertura de salud del condado Travis).",
+        "bring": "Cualquier identificación y frascos de medicina que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://communitycaretx.org/services/health-care-for-the-homeless/"
+    },
+    {
+      "id": "cuc-care-connections",
+      "city": "austin",
+      "name": "CommUnityCare Care Connections Clinic",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "3706 S. 1st St., Austin, TX 78704",
+      "lat": 30.2305,
+      "lng": -97.7645,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–4 pm (closed 11 am–12:30 pm)",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "11:00"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "12:30",
+          "to": "16:00"
+        }
+      ],
+      "phone": "512-978-8080",
+      "website": "https://communitycaretx.org/all-locations/care-connections-clinic/",
+      "notes": "People experiencing homelessness can come here without a referral.",
+      "bring": "Any ID and medicine bottles you have.",
+      "es": {
+        "hours": "Lun–Vie 8 am–4 pm (cerrado 11 am–12:30 pm)",
+        "notes": "Las personas sin hogar pueden venir sin referencia.",
+        "bring": "Cualquier identificación y frascos de medicina que tenga."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://communitycaretx.org/all-locations/care-connections-clinic/"
+    },
+    {
+      "id": "cuc-southeast",
+      "city": "austin",
+      "name": "CommUnityCare Southeast Health & Wellness Center",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "2901 Montopolis Dr., Austin, TX 78741",
+      "lat": 30.2215,
+      "lng": -97.6985,
+      "coordsApproximate": true,
+      "hours": "Walk-in clinic open Saturdays 8:30 am–4:30 pm. Call for weekday hours.",
+      "phone": "512-978-9500",
+      "website": "https://communitycaretx.org/all-locations/southeast-health-and-wellness-center-convenient-care/",
+      "notes": "Walk-in clinic, no appointment needed. Pharmacy on site.",
+      "bring": "Any ID, insurance or MAP card, and medicine you take.",
+      "es": {
+        "hours": "Clínica sin cita abierta los sábados 8:30 am–4:30 pm. Llame para el horario entre semana.",
+        "notes": "Clínica sin cita. Farmacia en el lugar.",
+        "bring": "Cualquier identificación, tarjeta de seguro o MAP, y la medicina que toma."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://communitycaretx.org/all-locations/southeast-health-and-wellness-center-convenient-care/"
+    },
+    {
+      "id": "cuc-east-austin",
+      "city": "austin",
+      "name": "CommUnityCare East Austin Health Center",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "211 Comal St., Austin, TX 78702",
+      "lat": 30.2597,
+      "lng": -97.7297,
+      "coordsApproximate": true,
+      "hours": "Call to confirm hours",
+      "phone": "512-978-9015",
+      "website": "https://communitycaretx.org/all-locations/east-austin-health-center/",
+      "notes": "Primary care clinic. Phone number is the CommUnityCare appointment line.",
+      "bring": "Any ID, insurance or MAP card, and medicine you take.",
+      "es": {
+        "hours": "Llame para confirmar el horario",
+        "notes": "Clínica de atención primaria. El teléfono es la línea de citas de CommUnityCare.",
+        "bring": "Cualquier identificación, tarjeta de seguro o MAP, y la medicina que toma."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://communitycaretx.org/all-locations/east-austin-health-center/"
+    },
+    {
+      "id": "peoples-clinic",
+      "city": "austin",
+      "name": "People's Community Clinic",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "1101 Camino La Costa, Austin, TX 78752",
+      "lat": 30.3227,
+      "lng": -97.7047,
+      "coordsApproximate": true,
+      "hours": "Call for hours and appointments",
+      "phone": "512-478-4939",
+      "website": "https://www.austinpcc.org/contact-us/main-clinic-hours-and-locations-1/",
+      "notes": "Low-cost care with a sliding scale based on income. They never turn a patient away for not being able to pay.",
+      "bring": "Any ID and proof of income if you have it.",
+      "es": {
+        "hours": "Llame para horario y citas",
+        "notes": "Atención de bajo costo con tarifa según sus ingresos. Nunca rechazan a un paciente por no poder pagar.",
+        "bring": "Cualquier identificación y comprobante de ingresos si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.austinpcc.org/"
+    },
+    {
+      "id": "integral-care-pes",
+      "city": "austin",
+      "name": "Integral Care Psychiatric Emergency Services",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "1165 Airport Blvd., 2nd Floor, Austin, TX 78702",
+      "lat": 30.2738,
+      "lng": -97.7052,
+      "coordsApproximate": true,
+      "hours": "Walk-in mental health crisis clinic. 24/7 helpline: 512-472-4357.",
+      "phone": "512-472-4357",
+      "website": "https://integralcare.org/en/crisis-services/",
+      "notes": "For adults and children in a mental health crisis. Call 512-472-HELP (4357) any time, day or night. You can also call or text 988.",
+      "bring": "Nothing required.",
+      "es": {
+        "hours": "Clínica sin cita para crisis de salud mental. Línea de ayuda 24/7: 512-472-4357.",
+        "notes": "Para adultos y niños en crisis de salud mental. Llame al 512-472-HELP (4357) a cualquier hora. También puede llamar o mandar texto al 988.",
+        "bring": "Nada es necesario."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://integralcare.org/en/247-crisis-helpline/"
+    },
+    {
+      "id": "vital-stats-state",
+      "city": "austin",
+      "name": "Texas Vital Statistics (Birth Certificates)",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "1100 W. 49th St., Austin, TX 78756",
+      "lat": 30.318,
+      "lng": -97.736,
+      "coordsApproximate": true,
+      "hours": "Walk-in: Mon–Fri 8 am–4 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "16:00"
+        }
+      ],
+      "phone": "Call to confirm",
+      "website": "https://www.dshs.texas.gov/vital-statistics/birth-records",
+      "notes": "Get a copy of a Texas birth certificate, often the same day. Anyone born in Texas can get a copy here.",
+      "bring": "A photo ID (see the ID guide if you have none) and the fee. Ask if you qualify for a free copy.",
+      "idStep": 1,
+      "es": {
+        "hours": "Sin cita: Lun–Vie 8 am–4 pm",
+        "notes": "Obtenga una copia de su acta de nacimiento de Texas, muchas veces el mismo día. Cualquier persona nacida en Texas puede pedirla aquí.",
+        "bring": "Identificación con foto (vea la guía si no tiene) y el pago. Pregunte si califica para una copia gratis."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.dshs.texas.gov/vital-statistics"
+    },
+    {
+      "id": "austin-vital-records",
+      "city": "austin",
+      "name": "Austin Public Health Office of Vital Records",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "7201 Levander Loop, Building C, Austin, TX 78702",
+      "lat": 30.251,
+      "lng": -97.688,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "Call 3-1-1",
+      "website": "https://www.austintexas.gov/health/programs/office-vital-records",
+      "notes": "Birth certificates for people born inside Austin city limits. $23 per copy. On the Betty Dunkerley Campus next to the Animal Center.",
+      "bring": "A photo ID and $23 per copy.",
+      "idStep": 1,
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Actas de nacimiento para personas nacidas dentro de la ciudad de Austin. $23 por copia. En el Campus Betty Dunkerley, al lado del Centro de Animales.",
+        "bring": "Identificación con foto y $23 por copia."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.austintexas.gov/health/programs/office-vital-records"
+    },
+    {
+      "id": "ssa-austin",
+      "city": "austin",
+      "name": "Social Security Office (Austin)",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "1029 Camino La Costa, Austin, TX 78752",
+      "lat": 30.3222,
+      "lng": -97.7055,
+      "coordsApproximate": true,
+      "hours": "Call to confirm. National line: Mon–Fri 8 am–7 pm.",
+      "phone": "1-800-772-1213",
+      "website": "https://www.ssa.gov/number-card/replace-card",
+      "notes": "A new or replacement Social Security card is always FREE. Never pay anyone for one.",
+      "bring": "Proof of who you are (like a state ID or passport). Call to ask what else you need.",
+      "idStep": 2,
+      "es": {
+        "hours": "Llame para confirmar. Línea nacional: Lun–Vie 8 am–7 pm.",
+        "notes": "Una tarjeta de Seguro Social nueva o de reemplazo es siempre GRATIS. Nunca le pague a nadie por una.",
+        "bring": "Prueba de quién es (como identificación estatal o pasaporte). Llame para preguntar qué más necesita."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.ssa.gov/number-card/replace-card"
+    },
+    {
+      "id": "dps-north-lamar",
+      "city": "austin",
+      "name": "Texas DPS Driver License Office – North Lamar",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "6121 N. Lamar Blvd., Austin, TX 78752",
+      "lat": 30.33,
+      "lng": -97.7255,
+      "coordsApproximate": true,
+      "hours": "By appointment only. Book at dps.texas.gov or call 512-424-2600 (Mon–Fri 7 am–5:30 pm).",
+      "phone": "512-424-2600",
+      "website": "https://www.dps.texas.gov/section/driver-license/driver-license-services-appointments",
+      "notes": "Apply for a Texas ID card here. You need an appointment. Phone is the DPS customer service line (Spanish: 512-424-7181).",
+      "bring": "See the Get Your ID guide: proof of identity, citizenship or lawful presence, Social Security number, and 2 proofs of Texas residency (or a Texas Residency Affidavit).",
+      "idStep": 3,
+      "es": {
+        "hours": "Solo con cita. Haga su cita en dps.texas.gov o llame al 512-424-2600 (Lun–Vie 7 am–5:30 pm).",
+        "notes": "Solicite su tarjeta de identificación de Texas aquí. Necesita cita. El teléfono es servicio al cliente de DPS (español: 512-424-7181).",
+        "bring": "Vea la guía para sacar su identificación: prueba de identidad, ciudadanía o presencia legal, número de Seguro Social y 2 pruebas de residencia en Texas (o una Declaración Jurada de Residencia)."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.dps.texas.gov/apps/DriverLicense/OfficeLocations"
+    },
+    {
+      "id": "dps-austin-south",
+      "city": "austin",
+      "name": "Texas DPS Driver License Office – Austin South",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "6425 S. IH-35, Suite 180, Austin, TX 78744",
+      "lat": 30.1935,
+      "lng": -97.7705,
+      "coordsApproximate": true,
+      "hours": "By appointment only. Book at dps.texas.gov or call 512-424-2600 (Mon–Fri 7 am–5:30 pm).",
+      "phone": "512-424-2600",
+      "website": "https://www.dps.texas.gov/section/driver-license/driver-license-services-appointments",
+      "notes": "Apply for a Texas ID card here. You need an appointment. In the Brookshire shopping center. Phone is the DPS customer service line (Spanish: 512-424-7181).",
+      "bring": "See the Get Your ID guide: proof of identity, citizenship or lawful presence, Social Security number, and 2 proofs of Texas residency (or a Texas Residency Affidavit).",
+      "idStep": 3,
+      "es": {
+        "hours": "Solo con cita. Haga su cita en dps.texas.gov o llame al 512-424-2600 (Lun–Vie 7 am–5:30 pm).",
+        "notes": "Solicite su tarjeta de identificación de Texas aquí. Necesita cita. En el centro comercial Brookshire. El teléfono es servicio al cliente de DPS (español: 512-424-7181).",
+        "bring": "Vea la guía para sacar su identificación: prueba de identidad, ciudadanía o presencia legal, número de Seguro Social y 2 pruebas de residencia en Texas (o una Declaración Jurada de Residencia)."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.dps.texas.gov/apps/DriverLicense/OfficeLocations"
+    },
+    {
+      "id": "wfs-north",
+      "city": "austin",
+      "name": "Workforce Solutions Capital Area – North Center",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs",
+        "internet"
+      ],
+      "address": "9001 N. IH-35, Suite 100, Austin, TX 78753",
+      "lat": 30.356,
+      "lng": -97.693,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–5 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "512-454-9675",
+      "website": "https://wfscapitalarea.com/contact/",
+      "notes": "Free help finding a job: job listings, resume help, computers, and training. Part of the Texas Workforce Commission network. For an appointment call 512-381-5100.",
+      "bring": "Any ID you have. A resume if you have one.",
+      "es": {
+        "hours": "Lun–Vie 8 am–5 pm",
+        "notes": "Ayuda gratis para buscar trabajo: ofertas de empleo, currículum, computadoras y capacitación. Parte de la red de la Comisión de la Fuerza Laboral de Texas. Para cita llame al 512-381-5100.",
+        "bring": "Cualquier identificación que tenga. Su currículum si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://wfscapitalarea.com/contact/"
+    },
+    {
+      "id": "va-austin-clinic",
+      "city": "austin",
+      "name": "Austin VA Clinic",
+      "category": "veterans",
+      "helpsWith": [
+        "veterans",
+        "medical"
+      ],
+      "address": "7901 Metropolis Dr., Austin, TX 78744",
+      "lat": 30.205,
+      "lng": -97.6885,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–4:30 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "16:30"
+        }
+      ],
+      "phone": "800-423-2111",
+      "website": "https://www.va.gov/central-texas-health-care/locations/austin-va-clinic/",
+      "notes": "Health care for veterans. Veterans without a home can also call the VA homeless hotline any time: 877-424-3838.",
+      "bring": "Your DD-214 or any military or VA papers if you have them. It is okay if you do not.",
+      "es": {
+        "hours": "Lun–Vie 8 am–4:30 pm",
+        "notes": "Atención médica para veteranos. Los veteranos sin hogar también pueden llamar a la línea del VA a cualquier hora: 877-424-3838.",
+        "bring": "Su DD-214 o papeles militares o del VA si tiene. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.va.gov/central-texas-health-care/locations/austin-va-clinic/"
+    },
+    {
+      "id": "vls-central-texas",
+      "city": "austin",
+      "name": "Volunteer Legal Services of Central Texas",
+      "category": "legal",
+      "helpsWith": [
+        "legal"
+      ],
+      "address": "1812 Centre Creek Dr., Suite 215, Austin, TX 78754",
+      "lat": 30.358,
+      "lng": -97.671,
+      "coordsApproximate": true,
+      "hours": "Mon–Thu 8 am–5 pm · Fri 8 am–2 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "08:00",
+          "to": "14:00"
+        }
+      ],
+      "phone": "512-476-5550",
+      "website": "https://www.vlsoct.org/get-help/",
+      "notes": "Free legal advice from volunteer lawyers: tenant and eviction problems, family law, protection from abuse, and more. Call to ask about free legal clinics.",
+      "bring": "Any papers about your legal problem.",
+      "es": {
+        "hours": "Lun–Jue 8 am–5 pm · Vie 8 am–2 pm",
+        "notes": "Consejos legales gratis de abogados voluntarios: problemas con el arrendador y desalojos, derecho familiar, protección contra el abuso y más. Llame para preguntar por clínicas legales gratis.",
+        "bring": "Cualquier papel sobre su problema legal."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.vlsoct.org/contact-us/"
+    },
+    {
+      "id": "church-st-marys",
+      "city": "austin",
+      "name": "St. Mary Cathedral (Catholic)",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "203 E. 10th St., Austin, TX 78701",
+      "lat": 30.27101,
+      "lng": -97.73966,
+      "coordsApproximate": false,
+      "hours": "Office: Mon–Fri 8:30 am–5 pm",
+      "serviceTimes": "Sat 5:30 pm · Sun 8 am, 9:30 am, 12 pm, 5:30 pm; Spanish Mass Sun 1:45 pm · Weekdays 6:30 am (Mon–Fri) and 12:05 pm (Mon–Sat)",
+      "servesMeals": false,
+      "phone": "512-476-6182",
+      "website": "https://smcaustin.org/mass-confession",
+      "notes": "Downtown Catholic cathedral. All are welcome at Mass.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Oficina: Lun–Vie 8:30 am–5 pm",
+        "serviceTimes": "Sáb 5:30 pm · Dom 8 am, 9:30 am, 12 pm, 5:30 pm; Misa en español Dom 1:45 pm · Entre semana 6:30 am (Lun–Vie) y 12:05 pm (Lun–Sáb)",
+        "notes": "Catedral católica en el centro. Todos son bienvenidos a Misa.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://smcaustin.org/mass-confession"
+    },
+    {
+      "id": "church-olg-austin",
+      "city": "austin",
+      "name": "Our Lady of Guadalupe Catholic Church",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "1206 E. 9th St., Austin, TX 78702",
+      "lat": 30.2685,
+      "lng": -97.7288,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sat 6 pm · Sun 8 am (Spanish), 10 am (English), 6 pm (Spanish) · Tue–Thu 6 pm (Spanish) · Fri 12 pm (Spanish)",
+      "servesMeals": false,
+      "phone": "512-478-7955",
+      "website": "https://olgaustin.org/",
+      "notes": "East Austin Catholic parish with many Masses in Spanish.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Sáb 6 pm · Dom 8 am (español), 10 am (inglés), 6 pm (español) · Mar–Jue 6 pm (español) · Vie 12 pm (español)",
+        "notes": "Parroquia católica del este de Austin con muchas misas en español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://olgaustin.org/"
+    },
+    {
+      "id": "church-mosaic-north",
+      "city": "austin",
+      "name": "Mosaic Church – North Austin Campus",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "12675 Research Blvd., Austin, TX 78759",
+      "lat": 30.4405,
+      "lng": -97.772,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 8:30 am, 10 am, and 11:30 am",
+      "servesMeals": false,
+      "phone": "512-537-0027",
+      "website": "https://makingamosaic.com/north-austin-campus/",
+      "notes": "Multiethnic, multigenerational church. Mosaic Street Ministry: Sundays 9–10:45 am at The Charlie Center (Bus 383, Stop #4690), and Tue/Wed/Thu 10 am–1 pm. Call to ask what is offered.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 8:30 am, 10 am y 11:30 am",
+        "notes": "Iglesia multiétnica y de todas las edades. Ministerio de la Calle de Mosaic: domingos 9–10:45 am en The Charlie Center (Autobús 383, Parada #4690), y Mar/Mié/Jue 10 am–1 pm. Llame para preguntar qué ofrecen.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://makingamosaic.com/mosaic-street-ministry/"
+    },
+    {
+      "id": "church-mosaic-south",
+      "city": "austin",
+      "name": "Mosaic Church – South Austin Campus",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "9910 Bilbrook Pl., Austin, TX 78748",
+      "lat": 30.1716,
+      "lng": -97.827,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 11 am",
+      "servesMeals": false,
+      "phone": "512-537-0027",
+      "website": "https://makingamosaic.com/south-austin-campus/",
+      "notes": "Mosaic Street Ministry (South): first Sunday of the month, 11:45 am–1:30 pm at Bus 3, Stop #2974. Call to ask what is offered.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 11 am",
+        "notes": "Ministerio de la Calle de Mosaic (Sur): primer domingo del mes, 11:45 am–1:30 pm en Autobús 3, Parada #2974. Llame para preguntar qué ofrecen.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://makingamosaic.com/mosaic-street-ministry/"
+    },
+    {
+      "id": "st-mark-food-pantry",
+      "city": "austin",
+      "name": "St. Mark UMC Food Pantry",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "601 W. Braker Ln., Austin, TX 78753",
+      "lat": 30.383,
+      "lng": -97.688,
+      "coordsApproximate": true,
+      "hours": "Food pantry: 2nd and 4th Saturday of each month (serves zip codes 78753 and 78758)",
+      "phone": "512-836-5747",
+      "website": "https://www.stmarkaustin.org/",
+      "notes": "Free food on the 2nd and 4th Saturday of each month, for people in zip codes 78753 and 78758.",
+      "bring": "Call to ask what to bring for the food pantry.",
+      "es": {
+        "hours": "Despensa: 2.º y 4.º sábado de cada mes (para los códigos postales 78753 y 78758)",
+        "notes": "Comida gratis el 2.º y 4.º sábado de cada mes, para personas en los códigos postales 78753 y 78758.",
+        "bring": "Llame para preguntar qué traer a la despensa."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.stmarkaustin.org/"
+    },
+    {
+      "id": "church-st-albert",
+      "city": "austin",
+      "name": "St. Albert the Great Catholic Church",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "12041 Bittern Hollow, Austin, TX 78758",
+      "lat": 30.4035,
+      "lng": -97.695,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 8 am (Spanish), 10 am, 12 pm, 2 pm (Spanish), 5 pm",
+      "servesMeals": false,
+      "phone": "Call to confirm",
+      "website": "https://austindiocese.org/parishfinder",
+      "notes": "North Austin Catholic parish with Masses in English and Spanish.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 8 am (español), 10 am, 12 pm, 2 pm (español), 5 pm",
+        "notes": "Parroquia católica del norte de Austin con misas en inglés y español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://mp.austindiocese.org/My/8/St.%20Albert%20the%20Great%20Catholic%20Church,%20Austin"
+    },
+    {
+      "id": "church-st-louis",
+      "city": "austin",
+      "name": "St. Louis King of France Catholic Church",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "7601 Burnet Rd., Austin, TX 78757",
+      "lat": 30.3517,
+      "lng": -97.7342,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 7:30 am (Spanish), 9:30 am, 11:30 am, 1:30 pm (Spanish), 6 pm",
+      "servesMeals": false,
+      "phone": "Call to confirm",
+      "website": "https://austindiocese.org/parishfinder",
+      "notes": "North Austin Catholic parish with Masses in English and Spanish.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 7:30 am (español), 9:30 am, 11:30 am, 1:30 pm (español), 6 pm",
+        "notes": "Parroquia católica del norte de Austin con misas en inglés y español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://mp.austindiocese.org/My/18/St.%20Louis%20Catholic%20Church,%20Austin"
+    },
+    {
+      "id": "dell-seton",
+      "city": "austin",
+      "name": "Dell Seton Medical Center at UT",
+      "category": "hospital",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "1500 Red River St., Austin, TX 78701",
+      "lat": 30.2765,
+      "lng": -97.7345,
+      "coordsApproximate": true,
+      "hours": "Emergency room open 24 hours, every day.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "512-324-7000",
+      "website": "https://healthcare.ascension.org/locations/texas/txaus/austin-dell-seton-medical-center-at-the-university-of-texas",
+      "notes": "Austin's main public teaching hospital and trauma center. The ER treats everyone, even with no money or insurance. Ask about financial help and Travis County's MAP program (512-978-8130).",
+      "bring": "Any ID, insurance or MAP card, and your medicines.",
+      "es": {
+        "hours": "Sala de emergencias abierta 24 horas, todos los días.",
+        "notes": "El hospital público principal de Austin y centro de trauma. La sala de emergencias atiende a todos, aunque no tenga dinero ni seguro. Pregunte por ayuda financiera y el programa MAP del condado Travis (512-978-8130).",
+        "bring": "Cualquier identificación, tarjeta de seguro o MAP y sus medicinas."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://healthcare.ascension.org/locations/texas/txaus/austin-dell-seton-medical-center-at-the-university-of-texas"
+    },
+    {
+      "id": "goodwill-austin-community-center",
+      "city": "austin",
+      "name": "Goodwill Community Center (job help)",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs"
+      ],
+      "address": "1015 Norwood Park Blvd., Austin, TX 78753",
+      "lat": 30.3398,
+      "lng": -97.6992,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "Call to confirm",
+      "website": "https://www.goodwillcentraltexas.org/programs-and-services/find-a-job/",
+      "notes": "Free job help from a career case manager: training, job placement, and help for people with past convictions or no stable housing. Goodwill also has job help at the ARCH and the Salvation Army.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Ayuda gratis para encontrar trabajo con un administrador de casos: capacitación, colocación de empleo y ayuda para personas con antecedentes o sin vivienda estable. Goodwill también ayuda en el ARCH y el Ejército de Salvación.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.goodwillcentraltexas.org/programs-and-services/find-a-job/"
+    },
+    {
+      "id": "church-austin-stone-st-john",
+      "city": "austin",
+      "name": "The Austin Stone Community Church – St. John",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "500 E. St. Johns Ave., Austin, TX 78752",
+      "lat": 30.3345,
+      "lng": -97.705,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 9 am and 11 am",
+      "servesMeals": false,
+      "phone": "Call to confirm",
+      "website": "https://www.austinstone.org/locations/st-john",
+      "notes": "Evangelical church in the St. Johns neighborhood.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 9 am y 11 am",
+        "notes": "Iglesia evangélica en el barrio St. Johns.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.austinstone.org/locations/st-john"
+    },
+    {
+      "id": "hou-star-of-hope-men",
+      "city": "houston",
+      "name": "Star of Hope Men's Development Center",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food"
+      ],
+      "address": "1811 Ruiz St., Houston, TX 77002",
+      "lat": 29.7618,
+      "lng": -95.3525,
+      "coordsApproximate": true,
+      "hours": "Call first",
+      "phone": "713-226-5414",
+      "website": "https://www.sohmission.org/how-we-help/for-men/",
+      "notes": "Christian shelter for men, with meals and programs to help you get back on your feet.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame primero",
+        "notes": "Refugio cristiano para hombres, con comidas y programas para ayudarle a salir adelante.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.sohmission.org/how-we-help/for-men/"
+    },
+    {
+      "id": "hou-star-of-hope-women",
+      "city": "houston",
+      "name": "Star of Hope Women & Family Development Center",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter"
+      ],
+      "address": "2575 Reed Rd., Houston, TX 77051",
+      "lat": 29.6625,
+      "lng": -95.3575,
+      "coordsApproximate": true,
+      "hours": "Intake in person: Mon–Fri 8 am–3:30 pm (takes 1–2 hours)",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "15:30"
+        }
+      ],
+      "phone": "713-222-2220",
+      "website": "https://www.sohmission.org/how-we-help/for-women-and-single-families/",
+      "notes": "Christian shelter for women and single-parent families. You must come in person to apply; spaces cannot be held by phone.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Admisión en persona: Lun–Vie 8 am–3:30 pm (toma 1–2 horas)",
+        "notes": "Refugio cristiano para mujeres y familias de un solo padre. Debe venir en persona para solicitar; no se apartan lugares por teléfono.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.sohmission.org/how-we-help/for-women-and-single-families/"
+    },
+    {
+      "id": "hou-the-beacon",
+      "city": "houston",
+      "name": "The Beacon Day Center",
+      "category": "day-center",
+      "helpsWith": [
+        "food",
+        "showers"
+      ],
+      "address": "1212 Prairie St., Houston, TX 77002",
+      "lat": 29.758,
+      "lng": -95.3615,
+      "coordsApproximate": true,
+      "hours": "Call to confirm days and hours",
+      "phone": "713-220-9737",
+      "website": "https://www.beaconhomeless.org/",
+      "notes": "Downtown day center with a hot lunch, showers, laundry, and help getting connected to other programs.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame para confirmar días y horario",
+        "notes": "Centro de día en el centro con almuerzo caliente, duchas, lavandería y ayuda para conectarse con otros programas.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.beaconhomeless.org/"
+    },
+    {
+      "id": "hou-search",
+      "city": "houston",
+      "name": "SEARCH Homeless Services",
+      "category": "day-center",
+      "helpsWith": [
+        "food",
+        "showers",
+        "id",
+        "shelter"
+      ],
+      "address": "2505 Fannin St., Houston, TX 77002",
+      "lat": 29.747,
+      "lng": -95.3745,
+      "coordsApproximate": true,
+      "hours": "Day services: Mon–Fri 8 am–5 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "713-739-7752",
+      "website": "https://www.searchhomeless.org/",
+      "notes": "Hot lunch, showers, laundry, hygiene supplies, and case managers who help you find housing and apply for help.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Servicios de día: Lun–Vie 8 am–5 pm",
+        "notes": "Almuerzo caliente, duchas, lavandería, artículos de higiene y administradores de casos que le ayudan a encontrar vivienda y solicitar ayuda.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.searchhomeless.org/"
+    },
+    {
+      "id": "hou-hhh-caroline",
+      "city": "houston",
+      "name": "Healthcare for the Homeless – Caroline Street Clinic",
+      "category": "clinic",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "1212 Prairie St., Houston, TX 77002",
+      "lat": 29.7583,
+      "lng": -95.3611,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 7:30 am–12 pm · Sat 9 am–12 pm. Walk-ins welcome.",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "07:30",
+          "to": "12:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "09:00",
+          "to": "12:00"
+        }
+      ],
+      "phone": "713-220-9730",
+      "website": "https://www.homeless-healthcare.org/care-locations",
+      "notes": "Health care for people experiencing homelessness. After hours, call 713-286-6000.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Vie 7:30 am–12 pm · Sáb 9 am–12 pm. Sin cita.",
+        "notes": "Atención médica para personas sin hogar. Fuera de horario, llame al 713-286-6000.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.homeless-healthcare.org/care-locations"
+    },
+    {
+      "id": "hou-central-library",
+      "city": "houston",
+      "name": "Houston Central Library (Jesse H. Jones Building)",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "500 McKinney St., Houston, TX 77002",
+      "lat": 29.758,
+      "lng": -95.3695,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "832-393-1313",
+      "website": "https://houstonlibrary.org/all-locations",
+      "notes": "Free computers and free Wi-Fi downtown.",
+      "bring": "Nothing needed to come in.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Computadoras y Wi-Fi gratis en el centro.",
+        "bring": "No necesita nada para entrar."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://houstonlibrary.org/all-locations"
+    },
+    {
+      "id": "hou-ben-taub",
+      "city": "houston",
+      "name": "Ben Taub Hospital (Harris Health)",
+      "category": "hospital",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "1504 Taub Loop, Houston, TX 77030",
+      "lat": 29.7105,
+      "lng": -95.3925,
+      "coordsApproximate": true,
+      "hours": "Emergency room open 24 hours, every day.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "713-873-2000",
+      "website": "https://www.harrishealth.org/locations-hh/Pages/ben-taub.aspx",
+      "notes": "Public hospital and trauma center. The ER treats everyone. Harris Health's Financial Assistance Program is free to apply for. 24-hour nurse line: 713-634-1110.",
+      "bring": "Any ID and your medicines.",
+      "es": {
+        "hours": "Sala de emergencias abierta 24 horas, todos los días.",
+        "notes": "Hospital público y centro de trauma. La sala de emergencias atiende a todos. Solicitar el Programa de Asistencia Financiera de Harris Health es gratis. Línea de enfermería 24 horas: 713-634-1110.",
+        "bring": "Cualquier identificación y sus medicinas."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.harrishealth.org/locations-hh/Pages/ben-taub.aspx"
+    },
+    {
+      "id": "hou-co-cathedral",
+      "city": "houston",
+      "name": "Co-Cathedral of the Sacred Heart (Catholic)",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "1111 St. Joseph Pkwy., Houston, TX 77002",
+      "lat": 29.7515,
+      "lng": -95.3695,
+      "coordsApproximate": true,
+      "hours": "Call for Mass times",
+      "serviceTimes": "Call for Mass times",
+      "servesMeals": false,
+      "phone": "713-659-1561",
+      "website": "https://sacredhearthouston.org/",
+      "notes": "Downtown Catholic cathedral. All are welcome at Mass.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de misas",
+        "notes": "Catedral católica en el centro. Todos son bienvenidos a Misa.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://sacredhearthouston.org/"
+    },
+    {
+      "id": "hou-second-baptist-woodway",
+      "city": "houston",
+      "name": "Second Baptist Church – Woodway",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "6400 Woodway Dr., Houston, TX 77057",
+      "lat": 29.764,
+      "lng": -95.493,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 9:30 am and 11:11 am; Spanish Sun 11 am",
+      "servesMeals": false,
+      "phone": "713-465-3408",
+      "website": "https://www.second.org/woodway",
+      "notes": "Large Baptist church with a Spanish service.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 9:30 am y 11:11 am; en español Dom 11 am",
+        "notes": "Iglesia bautista grande con servicio en español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.second.org/woodway"
+    },
+    {
+      "id": "hou-va-debakey",
+      "city": "houston",
+      "name": "Michael E. DeBakey VA Medical Center",
+      "category": "veterans",
+      "helpsWith": [
+        "veterans",
+        "medical"
+      ],
+      "address": "2002 Holcombe Blvd., Houston, TX 77030",
+      "lat": 29.701,
+      "lng": -95.388,
+      "coordsApproximate": true,
+      "hours": "Call for clinic hours",
+      "phone": "713-791-1414",
+      "website": "https://www.va.gov/houston-health-care/locations/michael-e-debakey-department-of-veterans-affairs-medical-center/",
+      "notes": "VA hospital with programs for veterans who are homeless: health care, food and shelter help, and housing. Veterans can also call 877-424-3838 any time.",
+      "bring": "Your DD-214 or any military or VA papers, if you have them.",
+      "es": {
+        "hours": "Llame para el horario",
+        "notes": "Hospital del VA con programas para veteranos sin hogar: salud, ayuda con comida y refugio, y vivienda. Los veteranos también pueden llamar al 877-424-3838 a cualquier hora.",
+        "bring": "Su DD-214 o papeles militares o del VA, si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.va.gov/houston-health-care/locations/michael-e-debakey-department-of-veterans-affairs-medical-center/"
+    },
+    {
+      "id": "hou-lone-star-legal",
+      "city": "houston",
+      "name": "Lone Star Legal Aid – Houston",
+      "category": "legal",
+      "helpsWith": [
+        "legal"
+      ],
+      "address": "1415 Fannin St., Houston, TX 77002",
+      "lat": 29.7535,
+      "lng": -95.3685,
+      "coordsApproximate": true,
+      "hours": "8 am–5 pm. Apply in person, online, or by phone.",
+      "phone": "713-652-0077",
+      "website": "https://www.lonestarlegal.org/office/houston-office/",
+      "notes": "Free legal help for people with low income. Toll-free: 800-733-8394.",
+      "bring": "Any papers about your legal problem.",
+      "es": {
+        "hours": "8 am–5 pm. Solicite en persona, en línea o por teléfono.",
+        "notes": "Ayuda legal gratis para personas de bajos ingresos. Gratis: 800-733-8394.",
+        "bring": "Cualquier papel sobre su problema legal."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.lonestarlegal.org/office/houston-office/"
+    },
+    {
+      "id": "hou-wfs-harrisburg",
+      "city": "houston",
+      "name": "Workforce Solutions – Harrisburg Career Office",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs",
+        "internet"
+      ],
+      "address": "4450 Harrisburg Blvd., Suite 100, Houston, TX 77011",
+      "lat": 29.7395,
+      "lng": -95.322,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–5 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "713-228-8848",
+      "website": "https://www.wrksolutions.com/find-a-career-office",
+      "notes": "Free job search help, computers, and training. Part of the Texas Workforce Commission network. Toll-free: 1-888-469-5627.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Vie 8 am–5 pm",
+        "notes": "Ayuda gratis para buscar trabajo, computadoras y capacitación. Parte de la red de la Comisión de la Fuerza Laboral de Texas. Gratis: 1-888-469-5627.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.wrksolutions.com/find-a-career-office"
+    },
+    {
+      "id": "hou-goodwill-heights",
+      "city": "houston",
+      "name": "Goodwill Houston – Heights Job Connection",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs"
+      ],
+      "address": "215 W. 20th St., Houston, TX 77008",
+      "lat": 29.8025,
+      "lng": -95.4015,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "832-431-4471",
+      "website": "https://www.goodwillhouston.org/jobs/job-career-services/career-centers/",
+      "notes": "Free help with resumes, interviews, and finding jobs that are hiring now. Computer lab for job searches.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Ayuda gratis con currículum, entrevistas y trabajos que están contratando ahora. Laboratorio de computadoras.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.goodwillhouston.org/jobs/job-career-services/career-centers/"
+    },
+    {
+      "id": "hou-vital-stats",
+      "city": "houston",
+      "name": "Houston Bureau of Vital Statistics (Birth Certificates)",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "8000 N. Stadium Dr., Houston, TX 77054",
+      "lat": 29.69,
+      "lng": -95.403,
+      "coordsApproximate": true,
+      "hours": "Mon–Thu 8 am–4 pm (walk-ins arrive by 3 pm)",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "08:00",
+          "to": "16:00"
+        }
+      ],
+      "phone": "713-794-9050",
+      "website": "https://www.houstonhealth.org/services/vital-statistics",
+      "notes": "Birth certificates for people born in Texas.",
+      "bring": "A photo ID and the fee. Ask if you qualify for a free copy.",
+      "idStep": 1,
+      "es": {
+        "hours": "Lun–Jue 8 am–4 pm (sin cita llegue antes de las 3 pm)",
+        "notes": "Actas de nacimiento para personas nacidas en Texas.",
+        "bring": "Identificación con foto y el pago. Pregunte si califica para una copia gratis."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.houstonhealth.org/services/vital-statistics"
+    },
+    {
+      "id": "dal-the-bridge",
+      "city": "dallas",
+      "name": "The Bridge Homeless Recovery Center",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food",
+        "showers",
+        "medical"
+      ],
+      "address": "1818 Corsicana St., Dallas, TX 75201",
+      "lat": 32.774,
+      "lng": -96.788,
+      "coordsApproximate": true,
+      "hours": "Open 24 hours, every day",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "214-670-1100",
+      "website": "https://www.bridgehrc.org/contact-us/",
+      "notes": "Day shelter for all adults experiencing homelessness, plus night shelter. Hot showers, meals, haircuts, health checks, and case management. Intake line: 214-670-1507.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Abierto 24 horas, todos los días",
+        "notes": "Refugio de día para todos los adultos sin hogar, y refugio de noche. Duchas calientes, comidas, cortes de pelo, chequeos de salud y manejo de casos. Admisión: 214-670-1507.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.bridgehrc.org/contact-us/"
+    },
+    {
+      "id": "dal-austin-street",
+      "city": "dallas",
+      "name": "Austin Street Center",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter"
+      ],
+      "address": "2929 Hickory St., Dallas, TX 75226",
+      "lat": 32.7735,
+      "lng": -96.7745,
+      "coordsApproximate": true,
+      "hours": "Walk-up intake Mon–Fri 1–4 pm (beds by lottery)",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "13:00",
+          "to": "16:00"
+        }
+      ],
+      "phone": "214-428-4242",
+      "website": "https://austinstreet.org/contact/",
+      "notes": "Low-barrier shelter for men 45 and older and women 18 and older. Meals, health care, job help, and housing case management.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Admisión sin cita Lun–Vie 1–4 pm (camas por sorteo)",
+        "notes": "Refugio de bajos requisitos para hombres de 45 años o más y mujeres de 18 o más. Comidas, salud, ayuda con trabajo y vivienda.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://austinstreet.org/contact/"
+    },
+    {
+      "id": "dal-ugm-calvert",
+      "city": "dallas",
+      "name": "Union Gospel Mission – Calvert Place Men's Shelter",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food"
+      ],
+      "address": "3211 Irving Blvd., Dallas, TX 75247",
+      "lat": 32.7915,
+      "lng": -96.8395,
+      "coordsApproximate": true,
+      "hours": "Intake every day 3–5 pm at The Bridge (1818 Corsicana St.)",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "15:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "214-637-6117",
+      "website": "https://ugmdallas.org/calvert-place-mens-shelter/",
+      "notes": "Christian shelter for men. Sign up for a bed at The Bridge between 3 and 5 pm.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Admisión todos los días 3–5 pm en The Bridge (1818 Corsicana St.)",
+        "notes": "Refugio cristiano para hombres. Pida cama en The Bridge entre las 3 y las 5 pm.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://ugmdallas.org/calvert-place-mens-shelter/"
+    },
+    {
+      "id": "dal-ourcalling",
+      "city": "dallas",
+      "name": "OurCalling Outreach Center",
+      "category": "day-center",
+      "helpsWith": [
+        "showers",
+        "food",
+        "id",
+        "internet"
+      ],
+      "address": "1702 S. Cesar Chavez Blvd., Dallas, TX 75215",
+      "lat": 32.77,
+      "lng": -96.781,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8:30 am–3 pm · Sat 8:30 am–1:30 pm (shower sign-up starts 7 am)",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:30",
+          "to": "15:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "08:30",
+          "to": "13:30"
+        }
+      ],
+      "phone": "214-444-8796",
+      "website": "https://www.ourcalling.org/findhelp/",
+      "notes": "Christian outreach center with no barriers. Showers, laundry, clothes, food, phone charging, free Wi-Fi, and partners who help with IDs, SNAP, the VA, medical care, and housing.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Vie 8:30 am–3 pm · Sáb 8:30 am–1:30 pm (inscripción para duchas desde las 7 am)",
+        "notes": "Centro cristiano sin requisitos. Duchas, lavandería, ropa, comida, carga de teléfono, Wi-Fi gratis y ayuda con identificaciones, SNAP, el VA, salud y vivienda.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.ourcalling.org/findhelp/"
+    },
+    {
+      "id": "dal-stewpot",
+      "city": "dallas",
+      "name": "The Stewpot",
+      "category": "day-center",
+      "helpsWith": [
+        "food",
+        "id"
+      ],
+      "address": "1610 S. Malcolm X Blvd., Dallas, TX 75226",
+      "lat": 32.7715,
+      "lng": -96.7725,
+      "coordsApproximate": true,
+      "hours": "Food pantry walk-ins daily 12–1 pm (Building 300). Call for other services.",
+      "phone": "469-573-0148",
+      "website": "https://www.thestewpot.org/stewpot-services-updates",
+      "notes": "Food pantry and Neighbor Resource Center for people experiencing homelessness. Meals are served at The Bridge.",
+      "bring": "Call to ask what to bring.",
+      "es": {
+        "hours": "Despensa sin cita todos los días 12–1 pm (Edificio 300). Llame para otros servicios.",
+        "notes": "Despensa de comida y Centro de Recursos para personas sin hogar. Las comidas se sirven en The Bridge.",
+        "bring": "Llame para preguntar qué traer."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.thestewpot.org/stewpot-services-updates"
+    },
+    {
+      "id": "dal-central-library",
+      "city": "dallas",
+      "name": "Dallas Central Library (J. Erik Jonsson)",
+      "category": "library",
+      "helpsWith": [
+        "internet",
+        "id"
+      ],
+      "address": "1515 Young St., Dallas, TX 75201",
+      "lat": 32.776,
+      "lng": -96.7975,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "214-670-1700",
+      "website": "https://www.dallaslibrary.org/central-library",
+      "notes": "Free computers and Wi-Fi downtown. The City of Dallas birth records office is inside this library.",
+      "bring": "Nothing needed to come in.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Computadoras y Wi-Fi gratis en el centro. La oficina de actas de nacimiento de la Ciudad de Dallas está dentro de esta biblioteca.",
+        "bring": "No necesita nada para entrar."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.dallaslibrary.org/central-library"
+    },
+    {
+      "id": "dal-parkland",
+      "city": "dallas",
+      "name": "Parkland Hospital",
+      "category": "hospital",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "5200 Harry Hines Blvd., Dallas, TX 75235",
+      "lat": 32.811,
+      "lng": -96.8395,
+      "coordsApproximate": true,
+      "hours": "Emergency room open 24 hours, every day.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "214-590-8000",
+      "website": "https://www.parklandhealth.org/parkland-financial-assistance",
+      "notes": "Dallas County's public hospital. The ER treats everyone. Parkland Financial Assistance helps Dallas County residents pay for care.",
+      "bring": "Any ID and your medicines.",
+      "es": {
+        "hours": "Sala de emergencias abierta 24 horas, todos los días.",
+        "notes": "El hospital público del condado Dallas. La sala de emergencias atiende a todos. La Asistencia Financiera de Parkland ayuda a residentes del condado a pagar.",
+        "bring": "Cualquier identificación y sus medicinas."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.parklandhealth.org/parkland-financial-assistance"
+    },
+    {
+      "id": "dal-cathedral-guadalupe",
+      "city": "dallas",
+      "name": "Cathedral Shrine of the Virgin of Guadalupe (Catholic)",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "2215 Ross Ave., Dallas, TX 75201",
+      "lat": 32.7885,
+      "lng": -96.798,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Mon–Fri 12 pm (English), 7 pm (Spanish) · Sun 8 am (English), 10 am (Spanish), 12 pm (English), 2 pm, 5 pm, and 7 pm (Spanish)",
+      "servesMeals": false,
+      "phone": "214-871-1362",
+      "website": "https://dallascatholic.org/cathedral/",
+      "notes": "Downtown Catholic cathedral with many Masses in Spanish.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Lun–Vie 12 pm (inglés), 7 pm (español) · Dom 8 am (inglés), 10 am (español), 12 pm (inglés), 2 pm, 5 pm y 7 pm (español)",
+        "notes": "Catedral católica en el centro con muchas misas en español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://dallascatholic.org/cathedral/"
+    },
+    {
+      "id": "dal-first-baptist",
+      "city": "dallas",
+      "name": "First Baptist Dallas",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "1707 San Jacinto St., Dallas, TX 75201",
+      "lat": 32.7858,
+      "lng": -96.796,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 9:15 am and 11 am",
+      "servesMeals": false,
+      "phone": "214-969-0111",
+      "website": "https://firstdallas.org/im-new/",
+      "notes": "Downtown Baptist church.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 9:15 am y 11 am",
+        "notes": "Iglesia bautista en el centro.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://firstdallas.org/im-new/"
+    },
+    {
+      "id": "dal-va",
+      "city": "dallas",
+      "name": "Dallas VA Medical Center",
+      "category": "veterans",
+      "helpsWith": [
+        "veterans",
+        "medical"
+      ],
+      "address": "4500 S. Lancaster Rd., Dallas, TX 75216",
+      "lat": 32.696,
+      "lng": -96.796,
+      "coordsApproximate": true,
+      "hours": "Call for clinic hours",
+      "phone": "214-742-8387",
+      "website": "https://www.va.gov/north-texas-health-care/locations/dallas-va-medical-center/",
+      "notes": "VA hospital with care coordinators who help veterans who are homeless find food, shelter, and housing. A VA mobile medical unit also visits people on the street.",
+      "bring": "Your DD-214 or any military or VA papers, if you have them.",
+      "es": {
+        "hours": "Llame para el horario",
+        "notes": "Hospital del VA con coordinadores que ayudan a veteranos sin hogar a encontrar comida, refugio y vivienda. Una unidad médica móvil del VA también visita a personas en la calle.",
+        "bring": "Su DD-214 o papeles militares o del VA, si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.va.gov/north-texas-health-care/locations/dallas-va-medical-center/"
+    },
+    {
+      "id": "dal-county-vital",
+      "city": "dallas",
+      "name": "Dallas County Vital Records (Birth Certificates)",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "500 Elm St., Suite 2100, Dallas, TX 75202",
+      "lat": 32.779,
+      "lng": -96.8065,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–4:30 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "16:30"
+        }
+      ],
+      "phone": "214-653-7099",
+      "website": "https://www.dallascounty.org/government/county-clerk/vital-records/",
+      "notes": "Birth certificates. Born inside Dallas city limits? The City of Dallas office in the Central Library can also help.",
+      "bring": "A photo ID and the fee. Ask if you qualify for a free copy.",
+      "idStep": 1,
+      "es": {
+        "hours": "Lun–Vie 8 am–4:30 pm",
+        "notes": "Actas de nacimiento. ¿Nació dentro de la ciudad de Dallas? La oficina de la Ciudad en la Biblioteca Central también ayuda.",
+        "bring": "Identificación con foto y el pago. Pregunte si califica para una copia gratis."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.dallascounty.org/government/county-clerk/vital-records/"
+    },
+    {
+      "id": "dal-wfs-opportunity",
+      "city": "dallas",
+      "name": "Workforce Solutions Greater Dallas – The Opportunity Center",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs",
+        "internet"
+      ],
+      "address": "1610 S. Malcolm X Blvd., Dallas, TX 75226",
+      "lat": 32.7718,
+      "lng": -96.773,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "214-290-1000",
+      "website": "https://www.wfsdallas.com/visit-a-center/",
+      "notes": "Free job search help, computers, and training. Part of the Texas Workforce Commission network.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Ayuda gratis para buscar trabajo, computadoras y capacitación. Parte de la red de la Comisión de la Fuerza Laboral de Texas.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.wfsdallas.com/visit-a-center/"
+    },
+    {
+      "id": "sa-haven-for-hope",
+      "city": "san-antonio",
+      "name": "Haven for Hope",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food",
+        "showers",
+        "medical"
+      ],
+      "address": "1 Haven for Hope Way, San Antonio, TX 78207",
+      "lat": 29.427,
+      "lng": -98.505,
+      "coordsApproximate": true,
+      "hours": "Intake: Mon–Fri 8 am–5 pm (walk in). Courtyard shelter open 24 hours.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "210-220-2100",
+      "website": "https://www.havenforhope.org/get-help/",
+      "notes": "San Antonio's main shelter campus. The Courtyard is a low-barrier shelter with three meals a day, showers, medical and mental health care. Walk in to intake.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Admisión: Lun–Vie 8 am–5 pm (sin cita). El Courtyard abre 24 horas.",
+        "notes": "El campus principal de refugio en San Antonio. El Courtyard es un refugio de bajos requisitos con tres comidas al día, duchas y atención médica y de salud mental. Llegue sin cita.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.havenforhope.org/get-help/"
+    },
+    {
+      "id": "sa-corazon",
+      "city": "san-antonio",
+      "name": "Corazon Ministries Day Center",
+      "category": "day-center",
+      "helpsWith": [
+        "food",
+        "showers",
+        "id"
+      ],
+      "address": "230 E. Travis St., San Antonio, TX 78205",
+      "lat": 29.4285,
+      "lng": -98.49,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 9 am–3 pm. Call to confirm where to go.",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "09:00",
+          "to": "15:00"
+        }
+      ],
+      "phone": "210-226-8341",
+      "website": "https://corazonsa.org/corazon-day-center/",
+      "notes": "Christian day center: hot meals, showers, clothes, hygiene items, phone and charging, ID recovery, and Bible study. Outreach meets at Travis Park Church; the main office is at 126 Gonzales St., Suite 200. Ask for ext. 318.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Vie 9 am–3 pm. Llame para confirmar adónde ir.",
+        "notes": "Centro de día cristiano: comidas calientes, duchas, ropa, higiene, teléfono y carga, ayuda con identificación y estudio bíblico. El alcance se reúne en Travis Park Church; la oficina principal está en 126 Gonzales St., Suite 200. Pida la ext. 318.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://corazonsa.org/corazon-day-center/"
+    },
+    {
+      "id": "sa-central-library",
+      "city": "san-antonio",
+      "name": "San Antonio Central Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "600 Soledad St., San Antonio, TX 78205",
+      "lat": 29.432,
+      "lng": -98.4935,
+      "coordsApproximate": true,
+      "hours": "Open 7 days a week. Call for hours.",
+      "phone": "210-207-2641",
+      "website": "https://www.mysapl.org/Visit/Locations/Central-Library",
+      "notes": "Free computers and free Wi-Fi downtown.",
+      "bring": "Nothing needed to come in.",
+      "es": {
+        "hours": "Abierto 7 días a la semana. Llame para el horario.",
+        "notes": "Computadoras y Wi-Fi gratis en el centro.",
+        "bring": "No necesita nada para entrar."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.mysapl.org/Visit/Locations/Central-Library"
+    },
+    {
+      "id": "sa-university-hospital",
+      "city": "san-antonio",
+      "name": "University Hospital & CareLink (University Health)",
+      "category": "hospital",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "4502 Medical Dr., San Antonio, TX 78229",
+      "lat": 29.5075,
+      "lng": -98.576,
+      "coordsApproximate": true,
+      "hours": "Emergency room open 24 hours, every day. CareLink: call for an appointment.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "210-358-3350",
+      "website": "https://www.universityhealth.com/patient-visitor-resources/patients/financial-assistance-health-coverage/carelink",
+      "notes": "Bexar County's public hospital. CareLink helps uninsured Bexar County residents (income up to 250% of the poverty level) pay for care. Phone is CareLink.",
+      "bring": "Any ID and proof of income if you have it.",
+      "es": {
+        "hours": "Sala de emergencias abierta 24 horas, todos los días. CareLink: llame para una cita.",
+        "notes": "El hospital público del condado Bexar. CareLink ayuda a residentes sin seguro del condado (ingresos hasta 250% del nivel de pobreza) a pagar. El teléfono es de CareLink.",
+        "bring": "Cualquier identificación y comprobante de ingresos si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.universityhealth.com/patient-visitor-resources/patients/financial-assistance-health-coverage/carelink"
+    },
+    {
+      "id": "sa-va-audie-murphy",
+      "city": "san-antonio",
+      "name": "Audie L. Murphy VA Hospital",
+      "category": "veterans",
+      "helpsWith": [
+        "veterans",
+        "medical"
+      ],
+      "address": "7400 Merton Minter Blvd., San Antonio, TX 78229",
+      "lat": 29.5125,
+      "lng": -98.5815,
+      "coordsApproximate": true,
+      "hours": "Call for clinic hours",
+      "phone": "210-617-5300",
+      "website": "https://www.va.gov/south-texas-health-care/locations/audie-l-murphy-memorial-veterans-hospital/",
+      "notes": "VA hospital for veterans. Veterans without a home can also call 877-424-3838 any time.",
+      "bring": "Your DD-214 or any military or VA papers, if you have them.",
+      "es": {
+        "hours": "Llame para el horario",
+        "notes": "Hospital del VA para veteranos. Los veteranos sin hogar también pueden llamar al 877-424-3838 a cualquier hora.",
+        "bring": "Su DD-214 o papeles militares o del VA, si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.va.gov/south-texas-health-care/locations/audie-l-murphy-memorial-veterans-hospital/"
+    },
+    {
+      "id": "sa-wfs-alamo",
+      "city": "san-antonio",
+      "name": "Workforce Solutions Alamo",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs",
+        "internet"
+      ],
+      "address": "100 N. Santa Rosa St., San Antonio, TX 78207",
+      "lat": 29.4265,
+      "lng": -98.497,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–5 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "210-272-3260",
+      "website": "https://www.workforcesolutionsalamo.org/about/contact-us/",
+      "notes": "Free job search help, computers, and training. They have 16 career centers; call 210-224-HELP (4357) to find the closest one.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Vie 8 am–5 pm",
+        "notes": "Ayuda gratis para buscar trabajo, computadoras y capacitación. Tienen 16 centros; llame al 210-224-HELP (4357) para encontrar el más cercano.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.workforcesolutionsalamo.org/about/contact-us/"
+    },
+    {
+      "id": "sa-food-bank",
+      "city": "san-antonio",
+      "name": "San Antonio Food Bank – Client Services",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "5200 Historic Old Hwy 90, San Antonio, TX 78227",
+      "lat": 29.4045,
+      "lng": -98.5985,
+      "coordsApproximate": true,
+      "hours": "Walk-in: Mon–Fri 8 am–5 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "210-431-8326",
+      "website": "https://safoodbank.org/help/",
+      "notes": "Free help finding food near you and applying for SNAP (food money) and Medicaid. Toll-free: 1-800-246-9121.",
+      "bring": "Call to ask what to bring.",
+      "es": {
+        "hours": "Sin cita: Lun–Vie 8 am–5 pm",
+        "notes": "Ayuda gratis para encontrar comida cerca y solicitar SNAP (dinero para comida) y Medicaid. Gratis: 1-800-246-9121.",
+        "bring": "Llame para preguntar qué traer."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://safoodbank.org/help/"
+    },
+    {
+      "id": "sa-san-fernando",
+      "city": "san-antonio",
+      "name": "San Fernando Cathedral (Catholic)",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "231 W. Commerce St., San Antonio, TX 78205",
+      "lat": 29.4245,
+      "lng": -98.494,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 8 am (Spanish), 10 am (English), 12 pm (Spanish), 2 pm and 5 pm (English)",
+      "servesMeals": false,
+      "phone": "210-227-1297",
+      "website": "https://sfcathedral.org/mass",
+      "notes": "Historic downtown Catholic cathedral on Main Plaza.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 8 am (español), 10 am (inglés), 12 pm (español), 2 pm y 5 pm (inglés)",
+        "notes": "Catedral católica histórica en la Plaza Principal.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://sfcathedral.org/mass"
+    },
+    {
+      "id": "sa-cornerstone",
+      "city": "san-antonio",
+      "name": "Cornerstone Church",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "18755 Stone Oak Pkwy., San Antonio, TX 78258",
+      "lat": 29.6365,
+      "lng": -98.463,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 8:30 am and 11 am",
+      "servesMeals": false,
+      "phone": "210-490-1600",
+      "website": "https://www.sacornerstone.org/visit",
+      "notes": "Large evangelical church in north San Antonio. ASL interpreting at 11 am.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 8:30 am y 11 am",
+        "notes": "Iglesia evangélica grande en el norte de San Antonio. Intérprete de lenguaje de señas a las 11 am.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.sacornerstone.org/visit"
+    },
+    {
+      "id": "sa-vital-records",
+      "city": "san-antonio",
+      "name": "San Antonio Vital Records (Birth Certificates)",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "719 S. Santa Rosa Ave., San Antonio, TX 78204",
+      "lat": 29.4165,
+      "lng": -98.4995,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "210-207-8781",
+      "website": "https://www.sanantonio.gov/Municipal-Archives-Records/Birth-Death-Records",
+      "notes": "City of San Antonio birth certificates. $23 per copy.",
+      "bring": "A photo ID and $23. Ask if you qualify for a free copy.",
+      "idStep": 1,
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Actas de nacimiento de la Ciudad de San Antonio. $23 por copia.",
+        "bring": "Identificación con foto y $23. Pregunte si califica para una copia gratis."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.sanantonio.gov/Municipal-Archives-Records/Birth-Death-Records"
+    },
+    {
+      "id": "fw-presbyterian-night-shelter",
+      "city": "fort-worth",
+      "name": "Presbyterian Night Shelter (Journey Home)",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food"
+      ],
+      "address": "2400 Cypress St., Fort Worth, TX 76102",
+      "lat": 32.7475,
+      "lng": -97.3185,
+      "coordsApproximate": true,
+      "hours": "Open 24 hours. Men check in at 2 pm. Women & children: call 817-632-7429 first.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "817-632-7400",
+      "website": "https://www.journeyhome.org/get-help-now",
+      "notes": "Low-barrier shelter that welcomes anyone who needs a place to stay.",
+      "bring": "Any ID you have and no more than two small bags.",
+      "es": {
+        "hours": "Abierto 24 horas. Los hombres se registran a las 2 pm. Mujeres y niños: llamen primero al 817-632-7429.",
+        "notes": "Refugio de bajos requisitos que recibe a cualquier persona que necesite dónde quedarse.",
+        "bring": "Cualquier identificación que tenga y no más de dos bolsas pequeñas."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.journeyhome.org/get-help-now"
+    },
+    {
+      "id": "fw-true-worth-place",
+      "city": "fort-worth",
+      "name": "True Worth Place (day shelter)",
+      "category": "day-center",
+      "helpsWith": [
+        "showers",
+        "food",
+        "medical"
+      ],
+      "address": "1513 E. Presidio St., Fort Worth, TX 76102",
+      "lat": 32.7505,
+      "lng": -97.3215,
+      "coordsApproximate": true,
+      "hours": "Every day 7 am–3 pm",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "07:00",
+          "to": "15:00"
+        }
+      ],
+      "phone": "817-289-7474",
+      "website": "https://trueworthplace.org/",
+      "notes": "Day shelter with showers, laundry, lunch, a mailing address, phones, and storage. A JPS health clinic is on site.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Todos los días 7 am–3 pm",
+        "notes": "Refugio de día con duchas, lavandería, almuerzo, dirección para correo, teléfonos y almacenaje. Hay una clínica JPS en el lugar.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://trueworthplace.org/"
+    },
+    {
+      "id": "fw-ugm-tarrant",
+      "city": "fort-worth",
+      "name": "Union Gospel Mission of Tarrant County",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food"
+      ],
+      "address": "1321 E. Lancaster Ave., Fort Worth, TX 76102",
+      "lat": 32.746,
+      "lng": -97.323,
+      "coordsApproximate": true,
+      "hours": "Welcome Center Mon–Fri 8:30 am–5:30 pm (intake until 4 pm). Meals for guests: breakfast 5:30–6 am, dinner 4:30–5 pm.",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:30",
+          "to": "16:00"
+        }
+      ],
+      "phone": "Call to confirm",
+      "website": "https://ugm-tc.org/welcome-center/",
+      "notes": "Christian shelter and meals. Check-in at 1:30 pm at the Cox Building.",
+      "bring": "A valid U.S. ID is required for shelter.",
+      "es": {
+        "hours": "Centro de Bienvenida Lun–Vie 8:30 am–5:30 pm (admisión hasta las 4 pm). Comidas: desayuno 5:30–6 am, cena 4:30–5 pm.",
+        "notes": "Refugio cristiano y comidas. Registro a la 1:30 pm en el edificio Cox.",
+        "bring": "Se requiere identificación válida de EE. UU. para el refugio."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://ugm-tc.org/welcome-center/"
+    },
+    {
+      "id": "fw-jps",
+      "city": "fort-worth",
+      "name": "JPS Hospital (John Peter Smith)",
+      "category": "hospital",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "1500 S. Main St., Fort Worth, TX 76104",
+      "lat": 32.7275,
+      "lng": -97.3275,
+      "coordsApproximate": true,
+      "hours": "Emergency room open 24 hours, every day. JPS Connection help: 8 am–5 pm.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "817-702-1001",
+      "website": "https://www.jpshealthnet.org/financial-resources/financial-assistance",
+      "notes": "Tarrant County's public hospital. The ER treats everyone. JPS Connection helps pay for doctors and medicine. Phone is the financial help line.",
+      "bring": "Any ID and proof of income if you have it.",
+      "es": {
+        "hours": "Sala de emergencias abierta 24 horas, todos los días. Ayuda JPS Connection: 8 am–5 pm.",
+        "notes": "El hospital público del condado Tarrant. La sala de emergencias atiende a todos. JPS Connection ayuda a pagar doctores y medicinas. El teléfono es la línea de ayuda financiera.",
+        "bring": "Cualquier identificación y comprobante de ingresos si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.jpshealthnet.org/financial-resources/financial-assistance"
+    },
+    {
+      "id": "fw-st-patrick",
+      "city": "fort-worth",
+      "name": "St. Patrick Cathedral (Catholic)",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "1206 Throckmorton St., Fort Worth, TX 76102",
+      "lat": 32.748,
+      "lng": -97.331,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 8, 9:30, 11 am, 12:30, and 5 pm (English); 2:30 pm (Spanish) · Mon–Fri 12:05 pm · Sat 8 am",
+      "servesMeals": false,
+      "phone": "817-332-4915",
+      "website": "https://fwdioc.org/parish-finder/st-patrick-cathedral",
+      "notes": "Downtown Catholic cathedral.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 8, 9:30, 11 am, 12:30 y 5 pm (inglés); 2:30 pm (español) · Lun–Vie 12:05 pm · Sáb 8 am",
+        "notes": "Catedral católica en el centro.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://fwdioc.org/parish-finder/st-patrick-cathedral"
+    },
+    {
+      "id": "fw-travis-avenue-baptist",
+      "city": "fort-worth",
+      "name": "Travis Avenue Baptist Church",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "800 W. Berry St., Fort Worth, TX 76110",
+      "lat": 32.7065,
+      "lng": -97.335,
+      "coordsApproximate": true,
+      "hours": "Office: Mon–Thu 8:30 am–5 pm, Fri 8:30 am–12 pm",
+      "serviceTimes": "Sun 9 am (traditional), 11:15 am (contemporary), 11:15 am (Spanish)",
+      "servesMeals": false,
+      "phone": "817-924-4266",
+      "website": "https://www.travis.org/servicetimes",
+      "notes": "Southern Baptist church with a Spanish service.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Oficina: Lun–Jue 8:30 am–5 pm, Vie 8:30 am–12 pm",
+        "serviceTimes": "Dom 9 am (tradicional), 11:15 am (contemporáneo), 11:15 am (español)",
+        "notes": "Iglesia bautista del sur con servicio en español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.travis.org/servicetimes"
+    },
+    {
+      "id": "fw-downtown-library",
+      "city": "fort-worth",
+      "name": "Fort Worth Downtown Express Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "200 Texas St., Fort Worth, TX 76102",
+      "lat": 32.752,
+      "lng": -97.3335,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "Call to confirm",
+      "website": "https://www.fortworthtexas.gov/departments/library/branches/lib-loc-del",
+      "notes": "Downtown library inside the former City Hall. Free Wi-Fi and computers.",
+      "bring": "Nothing needed to come in.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Biblioteca en el antiguo Ayuntamiento. Wi-Fi y computadoras gratis.",
+        "bring": "No necesita nada para entrar."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.fortworthtexas.gov/departments/library/branches/lib-loc-del"
+    },
+    {
+      "id": "fw-wfs-central",
+      "city": "fort-worth",
+      "name": "Workforce Solutions for Tarrant County – Central Center",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs",
+        "internet"
+      ],
+      "address": "1515 S. Sylvania Ave., Fort Worth, TX 76111",
+      "lat": 32.772,
+      "lng": -97.3045,
+      "coordsApproximate": true,
+      "hours": "Call to confirm",
+      "phone": "817-413-4000",
+      "website": "https://workforcesolutions.net/workforce-center-locations/",
+      "notes": "Free job search help, computers, and training. Part of the Texas Workforce Commission network.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame para confirmar",
+        "notes": "Ayuda gratis para buscar trabajo, computadoras y capacitación. Parte de la red de la Comisión de la Fuerza Laboral de Texas.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://workforcesolutions.net/workforce-center-locations/"
+    },
+    {
+      "id": "fw-va-clinic",
+      "city": "fort-worth",
+      "name": "Fort Worth VA Clinic",
+      "category": "veterans",
+      "helpsWith": [
+        "veterans",
+        "medical"
+      ],
+      "address": "2201 SE Loop 820, Fort Worth, TX 76119",
+      "lat": 32.6765,
+      "lng": -97.2765,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–4:30 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "16:30"
+        }
+      ],
+      "phone": "817-730-0000",
+      "website": "https://www.va.gov/north-texas-health-care/locations/fort-worth-va-clinic/",
+      "notes": "VA clinic for veterans: primary care, lab, and prescriptions. Ask for ext. 23327. Veterans without a home can call 877-424-3838 any time.",
+      "bring": "Your DD-214 or any military or VA papers, if you have them.",
+      "es": {
+        "hours": "Lun–Vie 8 am–4:30 pm",
+        "notes": "Clínica del VA para veteranos: atención primaria, laboratorio y recetas. Pida la ext. 23327. Los veteranos sin hogar pueden llamar al 877-424-3838 a cualquier hora.",
+        "bring": "Su DD-214 o papeles militares o del VA, si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.va.gov/north-texas-health-care/locations/fort-worth-va-clinic/"
+    },
+    {
+      "id": "fw-legal-aid",
+      "city": "fort-worth",
+      "name": "Legal Aid of NorthWest Texas – Fort Worth",
+      "category": "legal",
+      "helpsWith": [
+        "legal"
+      ],
+      "address": "600 E. Weatherford St., Fort Worth, TX 76102",
+      "lat": 32.7595,
+      "lng": -97.3265,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–5 pm. To apply, call ext. 3, Mon–Wed 8:30–11 am or 1:30–4 pm.",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "817-336-3943",
+      "website": "https://legalaidtx.org/locations/fort-worth/",
+      "notes": "Free legal help for people with low income. Toll-free: 800-955-3959.",
+      "bring": "Any papers about your legal problem.",
+      "es": {
+        "hours": "Lun–Vie 8 am–5 pm. Para solicitar, llame a la ext. 3, Lun–Mié 8:30–11 am o 1:30–4 pm.",
+        "notes": "Ayuda legal gratis para personas de bajos ingresos. Gratis: 800-955-3959.",
+        "bring": "Cualquier papel sobre su problema legal."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://legalaidtx.org/locations/fort-worth/"
+    },
+    {
+      "id": "fw-county-vital",
+      "city": "fort-worth",
+      "name": "Tarrant County Clerk Vital Records (Birth Certificates)",
+      "category": "id-office",
+      "helpsWith": [
+        "id"
+      ],
+      "address": "200 Taylor St., 3rd Floor, Fort Worth, TX 76196",
+      "lat": 32.7555,
+      "lng": -97.3345,
+      "coordsApproximate": true,
+      "hours": "Mon–Fri 8 am–5 pm (enter on the west side, off Burnett St.)",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "17:00"
+        }
+      ],
+      "phone": "817-884-1550",
+      "website": "https://www.tarrantcountytx.gov/en/county-clerk/vital-records/locations.html",
+      "notes": "Birth certificates. Also at 3212 Miller Ave., Fort Worth, same hours.",
+      "bring": "A photo ID and the fee. Ask if you qualify for a free copy.",
+      "idStep": 1,
+      "es": {
+        "hours": "Lun–Vie 8 am–5 pm (entrada por el lado oeste, en Burnett St.)",
+        "notes": "Actas de nacimiento. También en 3212 Miller Ave., Fort Worth, mismo horario.",
+        "bring": "Identificación con foto y el pago. Pregunte si califica para una copia gratis."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.tarrantcountytx.gov/en/county-clerk/vital-records/locations.html"
+    },
+    {
+      "id": "ep-opportunity-center",
+      "city": "el-paso",
+      "name": "Opportunity Center for the Homeless",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food",
+        "showers",
+        "medical"
+      ],
+      "address": "1208 Myrtle Ave., El Paso, TX 79901",
+      "lat": 31.757,
+      "lng": -106.4795,
+      "coordsApproximate": true,
+      "hours": "Call first",
+      "phone": "915-577-0069",
+      "website": "https://homelessopportunitycenter.org/get-help",
+      "notes": "Emergency shelter for adults, plus a women's shelter. People staying there get 3 meals a day, free medical care, showers, laundry, storage, clothes, phone and mail service, and counseling. Staff are there 24 hours.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Llame primero",
+        "notes": "Refugio de emergencia para adultos y un refugio para mujeres. Quienes se quedan reciben 3 comidas al día, atención médica gratis, duchas, lavandería, almacenaje, ropa, teléfono y correo, y consejería. Hay personal las 24 horas.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://homelessopportunitycenter.org/emergency-shelters"
+    },
+    {
+      "id": "ep-rescue-mission",
+      "city": "el-paso",
+      "name": "Rescue Mission of El Paso",
+      "category": "shelter",
+      "helpsWith": [
+        "shelter",
+        "food",
+        "jobs"
+      ],
+      "address": "221 N. Lee St., El Paso, TX 79901",
+      "lat": 31.7605,
+      "lng": -106.476,
+      "coordsApproximate": true,
+      "hours": "Office: Mon–Fri 8 am–12 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "08:00",
+          "to": "12:00"
+        }
+      ],
+      "phone": "915-532-2575",
+      "website": "https://epchomeless.org/portfolio-items/rescue-mission-of-el-paso/",
+      "notes": "Christian mission with food, clothing, shelter, counseling, job placement, and recovery programs. Mostly for single adults.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Oficina: Lun–Vie 8 am–12 pm",
+        "notes": "Misión cristiana con comida, ropa, refugio, consejería, colocación de empleo y programas de recuperación. Mayormente para adultos solos.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://epchomeless.org/portfolio-items/rescue-mission-of-el-paso/"
+    },
+    {
+      "id": "ep-main-library",
+      "city": "el-paso",
+      "name": "El Paso Main Library",
+      "category": "library",
+      "helpsWith": [
+        "internet"
+      ],
+      "address": "501 N. Oregon St., El Paso, TX 79901",
+      "lat": 31.7625,
+      "lng": -106.489,
+      "coordsApproximate": true,
+      "hours": "Sun 1–6 pm · Mon 10 am–6 pm · Tue–Thu 10 am–7 pm · Fri 1–6 pm · Sat 10 am–6 pm",
+      "open": [
+        {
+          "days": [
+            0
+          ],
+          "from": "13:00",
+          "to": "18:00"
+        },
+        {
+          "days": [
+            1
+          ],
+          "from": "10:00",
+          "to": "18:00"
+        },
+        {
+          "days": [
+            2,
+            3,
+            4
+          ],
+          "from": "10:00",
+          "to": "19:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "13:00",
+          "to": "18:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "10:00",
+          "to": "18:00"
+        }
+      ],
+      "phone": "915-212-7323",
+      "website": "https://www.elpasolibrary.org/locations/main-library",
+      "notes": "Free computers and free Wi-Fi downtown.",
+      "bring": "Nothing needed to come in.",
+      "es": {
+        "hours": "Dom 1–6 pm · Lun 10 am–6 pm · Mar–Jue 10 am–7 pm · Vie 1–6 pm · Sáb 10 am–6 pm",
+        "notes": "Computadoras y Wi-Fi gratis en el centro.",
+        "bring": "No necesita nada para entrar."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.elpasolibrary.org/locations/main-library"
+    },
+    {
+      "id": "ep-kelly-center",
+      "city": "el-paso",
+      "name": "Kelly Center for Hunger Relief",
+      "category": "food",
+      "helpsWith": [
+        "food"
+      ],
+      "address": "915 N. Florence St., El Paso, TX 79902",
+      "lat": 31.7665,
+      "lng": -106.483,
+      "coordsApproximate": true,
+      "hours": "Tue–Fri 9 am–2 pm · Sat 9 am–12 pm",
+      "open": [
+        {
+          "days": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "09:00",
+          "to": "14:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "09:00",
+          "to": "12:00"
+        }
+      ],
+      "phone": "915-261-7499",
+      "website": "https://kellyfresh.org/",
+      "notes": "Food pantry near downtown.",
+      "bring": "Call to ask what to bring.",
+      "es": {
+        "hours": "Mar–Vie 9 am–2 pm · Sáb 9 am–12 pm",
+        "notes": "Despensa de comida cerca del centro.",
+        "bring": "Llame para preguntar qué traer."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://kellyfresh.org/"
+    },
+    {
+      "id": "ep-umc",
+      "city": "el-paso",
+      "name": "University Medical Center of El Paso",
+      "category": "hospital",
+      "helpsWith": [
+        "medical"
+      ],
+      "address": "4815 Alameda Ave., El Paso, TX 79905",
+      "lat": 31.771,
+      "lng": -106.4365,
+      "coordsApproximate": true,
+      "hours": "Emergency room open 24 hours, every day.",
+      "open": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "00:00",
+          "to": "24:00"
+        }
+      ],
+      "phone": "915-544-1200",
+      "website": "https://www.umcelpaso.org/patients-and-visitors/billing-and-insurance/charity-care",
+      "notes": "El Paso County's public hospital. The ER treats everyone. Ask about charity care: Patient Financial Services (915) 521-7690.",
+      "bring": "Any ID and proof of income if you have it.",
+      "es": {
+        "hours": "Sala de emergencias abierta 24 horas, todos los días.",
+        "notes": "El hospital público del condado El Paso. La sala de emergencias atiende a todos. Pregunte por atención caritativa: Servicios Financieros (915) 521-7690.",
+        "bring": "Cualquier identificación y comprobante de ingresos si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.umcelpaso.org/patients-and-visitors/billing-and-insurance/charity-care"
+    },
+    {
+      "id": "ep-va",
+      "city": "el-paso",
+      "name": "El Paso VA Health Care Center",
+      "category": "veterans",
+      "helpsWith": [
+        "veterans",
+        "medical"
+      ],
+      "address": "5001 N. Piedras St., El Paso, TX 79930",
+      "lat": 31.803,
+      "lng": -106.443,
+      "coordsApproximate": true,
+      "hours": "Call for clinic hours",
+      "phone": "915-564-6100",
+      "website": "https://www.va.gov/el-paso-health-care/",
+      "notes": "VA health care for veterans. Toll-free: 1-800-672-3782. Veterans without a home can call 877-424-3838 any time.",
+      "bring": "Your DD-214 or any military or VA papers, if you have them.",
+      "es": {
+        "hours": "Llame para el horario",
+        "notes": "Atención médica del VA para veteranos. Gratis: 1-800-672-3782. Los veteranos sin hogar pueden llamar al 877-424-3838 a cualquier hora.",
+        "bring": "Su DD-214 o papeles militares o del VA, si tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.va.gov/el-paso-health-care/"
+    },
+    {
+      "id": "ep-st-patrick",
+      "city": "el-paso",
+      "name": "St. Patrick Cathedral (Catholic)",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "1118 N. Mesa St., El Paso, TX 79902",
+      "lat": 31.768,
+      "lng": -106.495,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sat 5:15 pm (English) · Sun 7 and 11 am (English), 9 am and 1 pm (Spanish) · Daily 7 am and 12:10 pm",
+      "servesMeals": false,
+      "phone": "915-533-4451",
+      "website": "https://saintpatrickcathedral.org/",
+      "notes": "Catholic cathedral with Masses in English and Spanish.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Sáb 5:15 pm (inglés) · Dom 7 y 11 am (inglés), 9 am y 1 pm (español) · Diario 7 am y 12:10 pm",
+        "notes": "Catedral católica con misas en inglés y español.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://saintpatrickcathedral.org/"
+    },
+    {
+      "id": "ep-abundant-downtown",
+      "city": "el-paso",
+      "name": "Abundant Church – Downtown",
+      "category": "church",
+      "helpsWith": [
+        "church"
+      ],
+      "address": "209 S. El Paso St., El Paso, TX 79901",
+      "lat": 31.7575,
+      "lng": -106.489,
+      "coordsApproximate": true,
+      "hours": "Call for office hours",
+      "serviceTimes": "Sun 10 am (Spanish translation)",
+      "servesMeals": false,
+      "phone": "Call to confirm",
+      "website": "https://abundant.org/downtown",
+      "notes": "Evangelical church in the historic Alhambra Theatre. Spanish translation in every service.",
+      "bring": "Nothing. Come as you are.",
+      "es": {
+        "hours": "Llame para el horario de oficina",
+        "serviceTimes": "Dom 10 am (con traducción al español)",
+        "notes": "Iglesia evangélica en el histórico Teatro Alhambra. Traducción al español en cada servicio.",
+        "bring": "Nada. Venga como está."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://abundant.org/downtown"
+    },
+    {
+      "id": "ep-wfs-borderplex",
+      "city": "el-paso",
+      "name": "Workforce Solutions Borderplex",
+      "category": "jobs",
+      "helpsWith": [
+        "jobs",
+        "internet"
+      ],
+      "address": "304 Texas Ave., Suite 1400, El Paso, TX 79901",
+      "lat": 31.759,
+      "lng": -106.488,
+      "coordsApproximate": true,
+      "hours": "Mon–Thu 8 am–6 pm · Fri 8 am–12 pm",
+      "open": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "from": "08:00",
+          "to": "18:00"
+        },
+        {
+          "days": [
+            5
+          ],
+          "from": "08:00",
+          "to": "12:00"
+        }
+      ],
+      "phone": "915-887-2244",
+      "website": "https://borderplexjobs.com/locations",
+      "notes": "Free job search help, computers, and training in the Blue Flame Building. Part of the Texas Workforce Commission network.",
+      "bring": "Any ID or papers you have. It is okay if you have none.",
+      "es": {
+        "hours": "Lun–Jue 8 am–6 pm · Vie 8 am–12 pm",
+        "notes": "Ayuda gratis para buscar trabajo, computadoras y capacitación en el edificio Blue Flame. Parte de la red de la Comisión de la Fuerza Laboral de Texas.",
+        "bring": "Cualquier identificación o papeles que tenga. Está bien si no tiene."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://borderplexjobs.com/locations"
+    },
+    {
+      "id": "ep-trla",
+      "city": "el-paso",
+      "name": "Texas RioGrande Legal Aid – El Paso",
+      "category": "legal",
+      "helpsWith": [
+        "legal"
+      ],
+      "address": "1331 Texas Ave., El Paso, TX 79901",
+      "lat": 31.7605,
+      "lng": -106.4815,
+      "coordsApproximate": true,
+      "hours": "Apply by phone: Mon–Fri 9 am–5 pm (Central Time)",
+      "phone": "833-329-8752",
+      "website": "https://www.trla.org/offices",
+      "notes": "Free legal help for people with low income: housing, benefits, family law, and more. Apply by phone first.",
+      "bring": "Any papers about your legal problem.",
+      "es": {
+        "hours": "Solicite por teléfono: Lun–Vie 9 am–5 pm (hora del centro)",
+        "notes": "Ayuda legal gratis para personas de bajos ingresos: vivienda, beneficios, derecho familiar y más. Solicite primero por teléfono.",
+        "bring": "Cualquier papel sobre su problema legal."
+      },
+      "lastVerified": "2026-09-25",
+      "source": "https://www.trla.org/offices"
+    }
+  ]
+}

@@ -4,6 +4,10 @@ import { Backpack, Church, Clock, ExternalLink, Footprints, Navigation, Phone, U
 import { useApp } from "@/lib/app-context";
 import { localized, phoneLabel, telHref, type Resource } from "@/lib/resources";
 import { formatWalk } from "@/lib/geo";
+import { describeStatus, openStatus } from "@/lib/hours";
+import { timeZoneFor } from "@/lib/search";
+import { useNow } from "@/lib/use-now";
+import { CITY_BY_ID } from "@/lib/cities";
 import { CategoryIcon } from "./NeedIcon";
 
 export function directionsUrl(r: Resource) {
@@ -17,14 +21,19 @@ export function ResourceCard({
   miles,
   minutes,
   compact = false,
+  showCity = false,
 }: {
   r: Resource;
   num?: number;
   miles?: number;
   minutes?: number;
   compact?: boolean;
+  /** Show the city name (used on the statewide list). */
+  showCity?: boolean;
 }) {
   const { t, lang } = useApp();
+  const now = useNow();
+  const status = now ? openStatus(r.open, now, timeZoneFor(r)) : null;
   const tel = telHref(r.phone);
   const hours = localized(r, "hours", lang);
   const services = localized(r, "serviceTimes", lang);
@@ -32,7 +41,7 @@ export function ResourceCard({
   const bring = localized(r, "bring", lang);
 
   return (
-    <article className={`rounded-3xl border-2 border-line bg-paper ${compact ? "p-4" : "p-5 md:p-6"}`}>
+    <article className={`print-avoid-break rounded-3xl border-2 border-line bg-paper print:rounded-none print:border print:p-2 ${compact ? "p-4" : "p-5 md:p-6"}`}>
       <div className="flex items-start gap-3">
         {num !== undefined && (
           <span
@@ -48,11 +57,22 @@ export function ResourceCard({
             <span className="inline-flex items-center gap-1">
               <CategoryIcon category={r.category} className="h-4 w-4" />
               {t.categories[r.category]}
+              {showCity && <span className="font-semibold text-ink">· {CITY_BY_ID[r.city]?.name}</span>}
             </span>
             {r.servesMeals && (
               <span className="inline-flex items-center gap-1 rounded-full bg-hope-soft px-2 font-semibold text-hope">
                 <Utensils className="h-4 w-4" aria-hidden="true" />
                 {t.servesMeals}
+              </span>
+            )}
+            {status && (
+              <span
+                data-print-hide
+                className={`inline-flex items-center gap-1 rounded-full px-2 font-semibold ${
+                  status.open ? "bg-hope text-white" : "bg-line text-ink"
+                }`}
+              >
+                {describeStatus(status, lang)}
               </span>
             )}
             {miles !== undefined && minutes !== undefined && (
@@ -106,6 +126,7 @@ export function ResourceCard({
         )}
         <a
           href={directionsUrl(r)}
+          data-print-hide
           target="_blank"
           rel="noreferrer noopener"
           className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-primary px-5 text-lg font-semibold text-primary no-underline hover:bg-primary-soft"
@@ -126,7 +147,7 @@ export function ResourceCard({
         )}
       </div>
 
-      <p className="mt-3 text-sm text-muted">
+      <p className="mt-3 text-sm text-muted print:mt-1">
         {t.lastChecked}: {formatDate(r.lastVerified, lang)}
       </p>
     </article>

@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import QRCode from "qrcode";
 import { LogoMark } from "@/components/Logo";
 import { FlyerPrintButton } from "@/components/FlyerPrintButton";
+import { FlyerQr } from "@/components/FlyerQr";
 
 export const metadata: Metadata = { title: "Printable flyer" };
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://redemption.com";
-const SHORT = SITE_URL.replace(/^https?:\/\//, "").replace(/\/$/, "");
-
-// The QR code is drawn once, when the site is built. No outside service is used.
-export default async function FlyerPage() {
-  const qr = await QRCode.toString(SITE_URL, { type: "svg", margin: 1, errorCorrectionLevel: "M" });
-
+// The QR code is drawn in the browser from the site's real address. No outside service is used.
+export default function FlyerPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 print:max-w-none print:p-0">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3 print:hidden">
-        <p className="text-lg text-muted">Print this and share it at shelters, churches, and libraries. / Imprima y comparta este volante.</p>
+        <p className="text-lg text-muted">Print this and share it at shelters, churches, and libraries anywhere in Texas. / Imprima y comparta este volante.</p>
         <FlyerPrintButton />
       </div>
 
@@ -29,7 +24,7 @@ export default async function FlyerPage() {
           Cada persona tiene valor. Cada persona puede ser redimida.
         </p>
 
-        <p className="mt-6 text-2xl font-semibold text-ink">Free help in Austin · Ayuda gratis en Austin</p>
+        <p className="mt-6 text-2xl font-semibold text-ink">Free help in Texas · Ayuda gratis en Texas</p>
         <p className="mx-auto mt-2 max-w-xl text-xl text-ink">
           Food · Shelter · Showers · ID · Phone · Church · Medical · Jobs · Veterans · Legal
         </p>
@@ -37,25 +32,7 @@ export default async function FlyerPage() {
           Comida · Refugio · Duchas · Identificación · Teléfono · Iglesia · Salud · Trabajo · Veteranos · Legal
         </p>
 
-        <div className="mx-auto mt-6 flex max-w-xl flex-col items-center gap-6 sm:flex-row sm:justify-center print:flex-row">
-          <div
-            className="h-56 w-56 shrink-0 rounded-xl border-2 border-ink bg-white p-2 [&>svg]:h-full [&>svg]:w-full"
-            role="img"
-            aria-label={`QR code for ${SHORT}`}
-            dangerouslySetInnerHTML={{ __html: qr }}
-          />
-          <div className="text-left">
-            <p className="text-lg text-muted">Visit / Visite:</p>
-            <p className="break-all font-mono text-4xl font-extrabold text-primary">{SHORT}</p>
-            <p className="mt-3 text-lg text-ink">
-              No phone? Use a free computer at any Austin Public Library.
-              <br />
-              <span lang="es" className="text-muted">
-                ¿No tiene teléfono? Use una computadora gratis en cualquier biblioteca pública de Austin.
-              </span>
-            </p>
-          </div>
-        </div>
+        <FlyerQr />
 
         <div className="mx-auto mt-8 max-w-xl rounded-2xl border-4 border-ink p-4">
           <p className="text-4xl font-extrabold text-ink">Call 2-1-1</p>

@@ -28,7 +28,7 @@ export function PageTitle({ en, es, introEn, introEs }: { en: string; es: string
 }
 
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <section className={`rounded-[2rem] border-2 border-line bg-paper p-5 md:p-8 ${className}`}>{children}</section>;
+  return <section className={`rounded-[2rem] border-2 border-line bg-paper p-5 md:p-8 print:rounded-none print:border print:p-3 ${className}`}>{children}</section>;
 }
 
 export function Ext({ href, children }: { href: string; children: ReactNode }) {

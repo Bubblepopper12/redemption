@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { BookOpen, Phone, Smartphone, Wifi } from "lucide-react";
 import { resources } from "@/lib/resources";
+import { CITIES } from "@/lib/cities";
 import { CallButton, Card, Ext, L, PageTitle } from "./L";
 
 export function Connected() {
@@ -79,8 +80,8 @@ export function Connected() {
           <div className="mt-3 grid gap-3 text-lg leading-relaxed">
             <p>
               <L
-                en="With an Austin Public Library card you can use computers, borrow books, and even borrow a 5G Wi-Fi hotspot for 3 weeks."
-                es="Con una tarjeta de la Biblioteca Pública de Austin puede usar computadoras, sacar libros y hasta llevarse un hotspot Wi-Fi 5G por 3 semanas."
+                en="A public library card is free. You can use computers, borrow books, and at some libraries (like Austin's) even borrow a Wi-Fi hotspot. Each city has its own rules, but they are close to Austin's, shown here."
+                es="La tarjeta de la biblioteca pública es gratis. Puede usar computadoras, sacar libros y en algunas bibliotecas (como la de Austin) hasta llevarse un hotspot Wi-Fi. Cada ciudad tiene sus reglas, pero son parecidas a las de Austin, que se muestran aquí."
               />
             </p>
             <p className="font-semibold">
@@ -126,8 +127,8 @@ export function Connected() {
             </p>
             <p>
               <L
-                en="The library also has a Community Navigation team to help people experiencing homelessness with health care, housing, and basic needs. Email:"
-                es="La biblioteca también tiene un equipo de Navegación Comunitaria que ayuda a personas sin hogar con salud, vivienda y necesidades básicas. Correo:"
+                en="In Austin, the library also has a Community Navigation team to help people experiencing homelessness with health care, housing, and basic needs. Email:"
+                es="En Austin, la biblioteca también tiene un equipo de Navegación Comunitaria que ayuda a personas sin hogar con salud, vivienda y necesidades básicas. Correo:"
               />{" "}
               <a href="mailto:APL.CommunityNav@austintexas.gov" className="break-all font-semibold">
                 APL.CommunityNav@austintexas.gov
@@ -148,23 +149,34 @@ export function Connected() {
           <H icon={<Wifi className="h-8 w-8" aria-hidden="true" />} en="Free Wi-Fi and computers" es="Wi-Fi y computadoras gratis" />
           <p className="mt-3 text-lg leading-relaxed">
             <L
-              en="Every Austin Public Library has free Wi-Fi and free computers. Trinity Center and Sunrise also have phones and computers you can use."
-              es="Todas las bibliotecas públicas de Austin tienen Wi-Fi gratis y computadoras gratis. Trinity Center y Sunrise también tienen teléfonos y computadoras que puede usar."
+              en="Public libraries have free Wi-Fi and free computers. Many day centers, like Trinity Center and Sunrise in Austin, SEARCH in Houston, and OurCalling in Dallas, also have phones, chargers, or computers you can use."
+              es="Las bibliotecas públicas tienen Wi-Fi y computadoras gratis. Muchos centros de día, como Trinity Center y Sunrise en Austin, SEARCH en Houston y OurCalling en Dallas, también tienen teléfonos, cargadores o computadoras."
             />
           </p>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {libraries.map((r) => (
-              <li key={r.id} className="rounded-2xl bg-sky p-3 text-base">
-                <strong className="block text-lg">{r.name}</strong>
-                {r.address}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-4 grid gap-5">
+            {CITIES.map((c) => {
+              const libs = libraries.filter((r) => r.city === c.id);
+              if (libs.length === 0) return null;
+              return (
+                <div key={c.id}>
+                  <h3 className="mb-2 text-xl font-bold">{c.name}</h3>
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {libs.map((r) => (
+                      <li key={r.id} className="rounded-2xl bg-sky p-3 text-base">
+                        <strong className="block text-lg">{r.name}</strong>
+                        {r.address}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
           <Link
             href="/map/#library"
             className="mt-4 inline-flex min-h-14 items-center gap-2 rounded-2xl bg-primary px-5 text-lg font-bold text-white no-underline hover:bg-primary-dark"
           >
-            <L en="See libraries on the map" es="Ver bibliotecas en el mapa" />
+            <L en="See all libraries on the map" es="Ver todas las bibliotecas en el mapa" />
           </Link>
         </Card>
       </div>

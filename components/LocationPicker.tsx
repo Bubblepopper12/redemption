@@ -3,12 +3,14 @@
 import { useId, useState } from "react";
 import { LocateFixed, MapPin, X } from "lucide-react";
 import { useApp } from "@/lib/app-context";
-import { LANDMARKS, ZIPS, type Place } from "@/lib/geo";
+import { inTexas, lookupZip, type Place } from "@/lib/geo";
+import { CITIES } from "@/lib/cities";
 
 /**
- * Three ways to say where you are. Nothing leaves this computer:
- * the ZIP and landmark lists are built into the page, and the browser's
- * location is only used right here to measure distance. Nothing is saved.
+ * Three ways to say where you are. Nothing about the person leaves this computer:
+ * the place list is built into the page, the ZIP list is a plain file from this
+ * site, and the browser's location is only used right here to measure distance.
+ * Nothing is saved.
  */
 export function LocationPicker({
   place,
@@ -23,6 +25,7 @@ export function LocationPicker({
   const [zip, setZip] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
+  const [zipBusy, setZipBusy] = useState(false);
   const zipId = useId();
   const pickId = useId();
   const msgId = useId();
@@ -37,7 +40,12 @@ export function LocationPicker({
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         setLocating(false);
-        onChange({ lat: pos.coords.latitude, lng: pos.coords.longitude, label: t.myLocation, approximate: false });
+        const { latitude, longitude } = pos.coords;
+        if (!inTexas(latitude, longitude)) {
+          setMessage(t.outsideTexas);
+          return;
+        }
+        onChange({ lat: latitude, lng: longitude, label: t.myLocation, approximate: false });
       },
       () => {
         setLocating(false);
@@ -47,23 +55,38 @@ export function LocationPicker({
     );
   }
 
-  function submitZip(e: React.FormEvent) {
+  async function submitZip(e: React.FormEvent) {
     e.preventDefault();
     const clean = zip.trim().slice(0, 5);
-    const hit = ZIPS[clean];
-    if (!hit) {
+    if (clean.length !== 5) {
       setMessage(t.zipUnknown);
       return;
     }
-    setMessage(null);
-    onChange({ lat: hit[0], lng: hit[1], label: `ZIP ${clean}`, approximate: true });
+    setZipBusy(true);
+    try {
+      const hit = await lookupZip(clean);
+      if (!hit) {
+        setMessage(t.zipUnknown);
+        return;
+      }
+      setMessage(null);
+      onChange({ lat: hit.lat, lng: hit.lng, label: `ZIP ${clean} (${hit.city})`, approximate: true });
+    } catch {
+      setMessage(t.zipError);
+    } finally {
+      setZipBusy(false);
+    }
   }
 
   function pickLandmark(id: string) {
-    const lm = LANDMARKS.find((l) => l.id === id);
-    if (!lm) return;
-    setMessage(null);
-    onChange({ lat: lm.lat, lng: lm.lng, label: lang === "es" ? lm.es : lm.en, approximate: true });
+    for (const c of CITIES) {
+      const lm = c.landmarks.find((l) => l.id === id);
+      if (lm) {
+        setMessage(null);
+        onChange({ lat: lm.lat, lng: lm.lng, label: `${lang === "es" ? lm.es : lm.en}, ${c.name}`, approximate: true });
+        return;
+      }
+    }
   }
 
   if (place) {
@@ -89,15 +112,28 @@ export function LocationPicker({
 
   return (
     <div className={compact ? "grid gap-3 md:grid-cols-3" : "grid gap-4"}>
-      <button
-        type="button"
-        onClick={useMyLocation}
-        disabled={locating}
-        className={`inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-6 font-bold text-white hover:bg-primary-dark disabled:opacity-70 ${big}`}
-      >
-        <LocateFixed className="h-6 w-6" aria-hidden="true" />
-        {locating ? t.finding : t.useLocation}
-      </button>
+      <div>
+        <label htmlFor={pickId} className={compact ? "sr-only" : "mb-1 block text-lg font-semibold text-ink"}>
+          {t.orPick}
+        </label>
+        <select
+          id={pickId}
+          value=""
+          onChange={(e) => pickLandmark(e.target.value)}
+          className={`w-full rounded-2xl border-2 border-primary bg-paper px-4 font-semibold text-ink focus:border-primary ${big}`}
+        >
+          <option value="">{t.pickPlace}</option>
+          {CITIES.map((c) => (
+            <optgroup key={c.id} label={c.name}>
+              {c.landmarks.map((l) => (
+                <option key={l.id} value={l.id}>
+                  {c.name} — {lang === "es" ? l.es : l.en}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+      </div>
 
       <form onSubmit={submitZip} className="flex gap-2">
         <label htmlFor={zipId} className="sr-only">
@@ -117,29 +153,24 @@ export function LocationPicker({
         />
         <button
           type="submit"
-          className={`rounded-2xl border-2 border-primary bg-paper px-5 font-bold text-primary hover:bg-primary-soft ${big}`}
+          disabled={zipBusy}
+          className={`rounded-2xl border-2 border-primary bg-paper px-5 font-bold text-primary hover:bg-primary-soft disabled:opacity-70 ${big}`}
         >
-          {t.zipGo}
+          {zipBusy ? t.zipLooking : t.zipGo}
         </button>
       </form>
 
       <div>
-        <label htmlFor={pickId} className={compact ? "sr-only" : "mb-1 block text-lg font-semibold text-ink"}>
-          {t.orPick}
-        </label>
-        <select
-          id={pickId}
-          value=""
-          onChange={(e) => pickLandmark(e.target.value)}
-          className={`w-full rounded-2xl border-2 border-line bg-paper px-4 text-ink focus:border-primary ${big}`}
+        <button
+          type="button"
+          onClick={useMyLocation}
+          disabled={locating}
+          className={`inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-6 font-bold text-white hover:bg-primary-dark disabled:opacity-70 ${big}`}
         >
-          <option value="">{t.pickPlace}</option>
-          {LANDMARKS.map((l) => (
-            <option key={l.id} value={l.id}>
-              {lang === "es" ? l.es : l.en}
-            </option>
-          ))}
-        </select>
+          <LocateFixed className="h-6 w-6" aria-hidden="true" />
+          {locating ? t.finding : t.useLocation}
+        </button>
+        {!compact && <p className="mt-2 text-base text-muted">{t.locationTip}</p>}
       </div>
 
       {message && (
