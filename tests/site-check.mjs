@@ -68,7 +68,13 @@ async function newPage({ width = 1280, height = 900, tiles = "fail", geo, lang }
   page.tileReferers = [];
   await page.route(/tile\.openstreetmap\.org/, (route) => {
     page.tileReferers.push(route.request().headers()["referer"] ?? "");
-    return tiles === "ok" ? route.fulfill({ status: 200, contentType: "image/png", body: PNG }) : route.abort();
+    // Real OpenStreetMap answers include this header, which lets browsers check the answer.
+    const cors = { "access-control-allow-origin": "*" };
+    if (tiles === "ok") return route.fulfill({ status: 200, contentType: "image/png", headers: cors, body: PNG });
+    // A block still sends a picture ("Access blocked"), with or without the header.
+    if (tiles === "blocked") return route.fulfill({ status: 403, contentType: "image/png", headers: cors, body: PNG });
+    if (tiles === "blocked-plain") return route.fulfill({ status: 403, contentType: "image/png", body: PNG });
+    return route.abort();
   });
   // Nothing else outside this site should ever be requested.
   page.outside = [];
@@ -376,14 +382,23 @@ for (const [width, lang] of [[1280, "en"], [1024, "en"], [768, "es"], [375, "en"
   const refs = ok.tileReferers;
   check(refs.length > 0 && refs.every((r) => r.startsWith(BASE)), "map requests send the site address (OpenStreetMap requires it)", refs[0] ?? "none");
   check(refs.every((r) => !r.includes("/map/")), "map requests do not reveal which page the person is on");
+  await ok.waitForTimeout(1500);
+  check(await ok.locator(".leaflet-container").first().isVisible(), "a working map stays on screen");
+  check((await ok.locator("svg[aria-label='Simple map']").count()) === 0, "a working map is not swapped for the drawn map");
   await ok.context().close();
 
-  const blocked = await newPage({ tiles: "fail" });
-  await blocked.goto(BASE + "/map/");
-  await blocked.waitForTimeout(2500);
-  check(await seen(blocked.locator("svg[aria-label='Simple map']").first()), "blocked map pictures switch to the simple drawn map");
-  check(!(await blocked.locator(".leaflet-container").first().isVisible()), "broken map is hidden (no error pictures)");
-  await blocked.context().close();
+  for (const [tiles, why] of [
+    ["fail", "cannot load"],
+    ["blocked", "come back as 'Access blocked'"],
+    ["blocked-plain", "are refused"],
+  ]) {
+    const blocked = await newPage({ tiles });
+    await blocked.goto(BASE + "/map/");
+    await blocked.waitForTimeout(2500);
+    check(await seen(blocked.locator("svg[aria-label='Simple map']").first()), `map pictures that ${why} switch to the simple drawn map`);
+    check(!(await blocked.locator(".leaflet-container").first().isVisible()), `map pictures that ${why} are hidden (no error pictures)`);
+    await blocked.context().close();
+  }
 }
 
 // ---------- 10. Map page filters ----------
