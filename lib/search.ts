@@ -78,3 +78,14 @@ export function uniqueHits(sections: Section[]): Hit[] {
   for (const s of sections) for (const h of s.hits) if (!seen.has(h.r.id)) seen.set(h.r.id, h);
   return [...seen.values()].sort((a, b) => a.num - b.num);
 }
+
+/** The closest place of one kind (for example the nearest library) in the person's area. */
+export function nearestOfCategory(category: Resource["category"], from: { lat: number; lng: number }): Omit<Hit, "num"> | null {
+  const city = nearestCity(from);
+  const best = resources
+    .filter((r) => r.category === category)
+    .filter((r) => r.city === city?.id || milesBetween(from, r) <= NEARBY_MILES)
+    .map((r) => ({ r, ...walking(from, r) }))
+    .sort((a, b) => a.miles - b.miles)[0];
+  return best ?? null;
+}

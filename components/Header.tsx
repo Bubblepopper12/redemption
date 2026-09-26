@@ -20,6 +20,7 @@ export function Header() {
     { href: "/id/", label: t.nav.id },
     { href: "/connected/", label: t.nav.connected },
     { href: "/more-help/", label: t.nav.more },
+    { href: "/handout/", label: t.nav.handout },
   ];
 
   return (

@@ -1,6 +1,7 @@
 "use client";
 
-import { Heart, Phone } from "lucide-react";
+import Link from "next/link";
+import { HandHeart, Heart, Phone } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import { FEATURED_VERSE } from "@/lib/verses";
 
@@ -35,6 +36,12 @@ export function Hero() {
         <p className="mx-auto mt-4 flex max-w-2xl items-start justify-center gap-2 text-base text-muted">
           <Heart className="mt-1 h-5 w-5 shrink-0 text-sun" aria-hidden="true" />
           {t.freeForAll}
+        </p>
+        <p className="mt-3">
+          <Link href="/handout/" className="inline-flex items-center gap-2 text-base font-semibold">
+            <HandHeart className="h-5 w-5" aria-hidden="true" />
+            {t.helpingSomeone}
+          </Link>
         </p>
       </div>
     </section>

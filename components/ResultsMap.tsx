@@ -54,10 +54,23 @@ export function ResultsMap({
           maxZoom: 19,
           // OpenStreetMap requires a Referer header. Only the site's address is sent, never the page or the person.
           referrerPolicy: "strict-origin-when-cross-origin",
+          // Load map pictures the checked way (OpenStreetMap allows it), so a refused picture counts as an error.
+          crossOrigin: "anonymous",
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         });
-        tiles.on("tileload", () => {
+        tiles.on("tileload", (e) => {
           loaded++;
+          // When OpenStreetMap blocks a site it still sends a picture ("Access blocked"),
+          // so a picture showing up is not enough. Check the first one's answer code.
+          if (loaded === 1) {
+            fetch((e.tile as HTMLImageElement).src, { referrerPolicy: "strict-origin-when-cross-origin", credentials: "omit" })
+              .then((res) => {
+                if (!res.ok && !cancelled) setFailed(true);
+              })
+              .catch(() => {
+                /* no answer at all: the other checks below still apply */
+              });
+          }
         });
         tiles.on("tileerror", () => {
           errors++;

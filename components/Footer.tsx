@@ -43,7 +43,7 @@ export function Footer() {
           <p>{t.footerPrivacy}</p>
           <p className="flex gap-4">
             <Link href="/privacy/">{t.footerLinks.privacy}</Link>
-            <Link href="/flyer/">{t.footerLinks.flyer}</Link>
+            <Link href="/handout/">{t.footerLinks.flyer}</Link>
           </p>
         </div>
         <div className="mx-auto max-w-6xl px-4 pb-8 text-xs leading-relaxed text-muted">

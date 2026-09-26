@@ -68,7 +68,13 @@ async function newPage({ width = 1280, height = 900, tiles = "fail", geo, lang }
   page.tileReferers = [];
   await page.route(/tile\.openstreetmap\.org/, (route) => {
     page.tileReferers.push(route.request().headers()["referer"] ?? "");
-    return tiles === "ok" ? route.fulfill({ status: 200, contentType: "image/png", body: PNG }) : route.abort();
+    // Real OpenStreetMap answers include this header, which lets browsers check the answer.
+    const cors = { "access-control-allow-origin": "*" };
+    if (tiles === "ok") return route.fulfill({ status: 200, contentType: "image/png", headers: cors, body: PNG });
+    // A block still sends a picture ("Access blocked"), with or without the header.
+    if (tiles === "blocked") return route.fulfill({ status: 403, contentType: "image/png", headers: cors, body: PNG });
+    if (tiles === "blocked-plain") return route.fulfill({ status: 403, contentType: "image/png", body: PNG });
+    return route.abort();
   });
   // Nothing else outside this site should ever be requested.
   page.outside = [];
@@ -90,6 +96,46 @@ async function axe(page, label) {
   check(v.length === 0, `accessibility: ${label}`, v.join(", "));
 }
 
+/** Words in these elements that got split across two lines (e.g. "Shower / s"). */
+const splitWords = (page, selector) =>
+  page.$$eval(selector, (els) => {
+    const bad = [];
+    for (const el of els) {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        for (const m of node.textContent.matchAll(/\S+/g)) {
+          const range = document.createRange();
+          range.setStart(node, m.index);
+          range.setEnd(node, m.index + m[0].length);
+          const tops = new Set([...range.getClientRects()].map((r) => Math.round(r.top)));
+          if (tops.size > 1) bad.push(m[0]);
+        }
+      }
+    }
+    return bad;
+  });
+
+/** Buttons whose words spill outside their own edges. */
+const spilling = (page, selector) =>
+  page.$$eval(selector, (els) =>
+    els
+      .filter((e) => {
+        if (e.classList.contains("sr-only")) return false;
+        const box = e.getBoundingClientRect();
+        const walker = document.createTreeWalker(e, NodeFilter.SHOW_TEXT);
+        for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          for (const r of range.getClientRects()) if (r.width && (r.right > box.right + 1 || r.left < box.left - 1)) return true;
+        }
+        return false;
+      })
+      .map((e) => e.textContent.trim()),
+  );
+
+/** Handout sheets have a fixed paper size; this finds any whose words run off the bottom. */
+const clippedSheets = (page) => page.$$eval("article", (a) => a.filter((x) => x.scrollHeight > x.clientHeight + 1).map((x) => x.lang));
+
 /** Waits up to 5 seconds for something to appear. */
 const seen = (loc, ms = 5000) => loc.first().waitFor({ state: "visible", timeout: ms }).then(() => true, () => false);
 
@@ -98,7 +144,7 @@ async function pdfPages(page) {
   return (pdf.toString("latin1").match(/\/Type\s*\/Page[^s]/g) ?? []).length;
 }
 
-const PAGES = ["/", "/map/", "/id/", "/connected/", "/more-help/", "/bible/", "/privacy/", "/flyer/"];
+const PAGES = ["/", "/map/", "/id/", "/connected/", "/more-help/", "/bible/", "/privacy/", "/flyer/", "/handout/"];
 
 // ---------- 1. Every page, every width, both languages ----------
 for (const lang of ["en", "es"]) {
@@ -281,6 +327,32 @@ for (const lang of ["en", "es"]) {
   await page.context().close();
 }
 
+// ---------- 7b. Helper mode layout: numbered steps, no broken words ----------
+for (const [width, lang] of [[1280, "en"], [1024, "en"], [768, "es"], [375, "en"], [320, "es"]]) {
+  const page = await newPage({ width, lang });
+  await page.goto(BASE + "/");
+  await page.getByRole("switch").click();
+  await page.waitForTimeout(200);
+  const broken = await splitWords(page, "main button, main label");
+  check(broken.length === 0, `helper mode: no words split across lines at ${width}px (${lang})`, broken.join(", "));
+  const spill = await spilling(page, "main button, main select, main input");
+  check(spill.length === 0, `helper mode: no text spilling out of buttons at ${width}px (${lang})`, spill.join(", "));
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  check(overflow <= 0, `helper mode: no sideways scroll at ${width}px (${lang})`, `${overflow}px`);
+  if (width === 1280) {
+    const ok = page.getByRole("button", { name: "OK", exact: true });
+    const zip = page.locator("input[inputmode=numeric]").first();
+    const [okBox, zipBox] = [await ok.boundingBox(), await zip.boundingBox()];
+    check(okBox && zipBox && Math.abs(okBox.y - zipBox.y) < 8 && okBox.height < 70, "helper mode: OK button sits beside the ZIP box on one line", JSON.stringify(okBox));
+    check(await seen(page.getByText("Where are you?")), "helper mode shows numbered step 1 (where)");
+    check(await seen(page.getByText("What do they need?")), "helper mode shows numbered step 2 (needs)");
+    await axe(page, "helper mode");
+    await page.getByRole("link", { name: "Make handouts" }).first().click();
+    check(await seen(page.getByRole("heading", { name: "Make handouts" })), "helper mode links to Make handouts");
+  }
+  await page.context().close();
+}
+
 // ---------- 8. Open now badges use Texas time ----------
 {
   const page = await newPage();
@@ -310,14 +382,23 @@ for (const lang of ["en", "es"]) {
   const refs = ok.tileReferers;
   check(refs.length > 0 && refs.every((r) => r.startsWith(BASE)), "map requests send the site address (OpenStreetMap requires it)", refs[0] ?? "none");
   check(refs.every((r) => !r.includes("/map/")), "map requests do not reveal which page the person is on");
+  await ok.waitForTimeout(1500);
+  check(await ok.locator(".leaflet-container").first().isVisible(), "a working map stays on screen");
+  check((await ok.locator("svg[aria-label='Simple map']").count()) === 0, "a working map is not swapped for the drawn map");
   await ok.context().close();
 
-  const blocked = await newPage({ tiles: "fail" });
-  await blocked.goto(BASE + "/map/");
-  await blocked.waitForTimeout(2500);
-  check(await seen(blocked.locator("svg[aria-label='Simple map']").first()), "blocked map pictures switch to the simple drawn map");
-  check(!(await blocked.locator(".leaflet-container").first().isVisible()), "broken map is hidden (no error pictures)");
-  await blocked.context().close();
+  for (const [tiles, why] of [
+    ["fail", "cannot load"],
+    ["blocked", "come back as 'Access blocked'"],
+    ["blocked-plain", "are refused"],
+  ]) {
+    const blocked = await newPage({ tiles });
+    await blocked.goto(BASE + "/map/");
+    await blocked.waitForTimeout(2500);
+    check(await seen(blocked.locator("svg[aria-label='Simple map']").first()), `map pictures that ${why} switch to the simple drawn map`);
+    check(!(await blocked.locator(".leaflet-container").first().isVisible()), `map pictures that ${why} are hidden (no error pictures)`);
+    await blocked.context().close();
+  }
 }
 
 // ---------- 10. Map page filters ----------
@@ -382,6 +463,10 @@ for (const lang of ["en", "es"]) {
   const page = await newPage();
   await page.goto(BASE + "/flyer/");
   await page.waitForSelector("[role=img][aria-label^='QR code'] svg");
+  await page.setViewportSize({ width: 320, height: 900 });
+  const split = await splitWords(page, "article p:not(.font-mono)");
+  check(split.length === 0, "flyer: no words split on a 320px phone", split.join(", "));
+  await page.setViewportSize({ width: 1280, height: 900 });
   check((await page.locator("[aria-label^='QR code']").getAttribute("aria-label")).includes("localhost"), "flyer QR code uses the site's real address");
   await page.emulateMedia({ media: "print" });
   check((await pdfPages(page)) === 1, "flyer prints on one page");
@@ -389,6 +474,153 @@ for (const lang of ["en", "es"]) {
   await page.goto(BASE + "/no-such-page/");
   check(await seen(page.getByText("We could not find that page.")), "friendly page for a wrong address");
   check(page.outside.length === 0, "no requests to outside sites (besides map pictures)", page.outside.join(", "));
+  await page.context().close();
+}
+
+// ---------- 15. Make handouts ----------
+{
+  const page = await newPage();
+  await page.goto(BASE + "/handout/");
+  const make = page.getByRole("button", { name: "Make my handout" });
+  await make.click();
+  check(await seen(page.getByText(/First, tell us where you will hand these out/)), "handouts: asks where first");
+  check((await page.locator("article").count()) === 0, "handouts: no handout without a place");
+  const broken = await splitWords(page, "main button, main label");
+  check(broken.length === 0, "handouts: no words split across lines", broken.join(", "));
+  const spill = await spilling(page, "main button, main label");
+  check(spill.length === 0, "handouts: no text spilling out of buttons", spill.join(", "));
+
+  // Up to 4 needs (3 are picked to start).
+  await page.getByRole("button", { name: /^Get an ID/ }).click();
+  await page.getByRole("button", { name: /^Jobs/ }).click();
+  const picked = await page.locator("button[aria-pressed=true]").count();
+  check(picked === 4, "handouts: no more than 4 needs", `${picked} picked`);
+  await page.getByRole("button", { name: /^Get an ID/ }).click();
+
+  await page.locator("select").first().selectOption("aus-downtown");
+  await page.getByLabel("Name of this spot").fill("Republic Square Park");
+  await page.getByRole("radio", { name: "English" }).check();
+  await make.click();
+  check(await seen(page.getByRole("heading", { name: "Your handout is ready" })), "handouts: preview opens");
+  const sheet = page.locator("article").first();
+  const text = await sheet.textContent();
+  check(text.includes("Austin Central Library") && text.includes("710 W. Cesar Chavez"), "handouts: nearest library with its address", text.slice(0, 200));
+  check(/About \d\.\d miles \w+ of Republic Square Park/.test(text), "handouts: directions from the spot they named");
+  check(/Ask at the front desk to use a free computer/.test(text), "handouts: explains how to use a library computer");
+  check(text.includes("localhost"), "handouts: shows the site address to type");
+  check(/Redemption is a free Christian website/.test(text), "handouts: says who we are");
+  check(/Rest for the tired/.test(text) && /Matthew 11:28/.test(text), "handouts: includes the devotional");
+  check(/Trinity Center|ARCH|LifeWorks/.test(text), "handouts: lists help near the spot");
+  check(/2-1-1/.test(text) && /988/.test(text), "handouts: 2-1-1 and crisis numbers");
+  check(await seen(page.locator("article [role=img][aria-label^='QR code'] svg")), "handouts: QR code drawn");
+  check((await page.locator("article svg[aria-label='Simple map'], article .leaflet-container").count()) === 0, "handouts: no map (simpler to read and print)");
+  check(!/Call to confirm · Call to confirm/.test(text), "handouts: no repeated 'Call to confirm'");
+  check((await clippedSheets(page)).length === 0, "handouts: nothing cut off the full flyer");
+  const fit = await sheet.getAttribute("data-fit");
+  check(Number(fit) >= 0.95, "handouts: the usual flyer prints at (nearly) full size", `fit ${fit}`);
+  await axe(page, "handout preview");
+  await page.emulateMedia({ media: "print" });
+  check((await pdfPages(page)) === 1, "handouts: one full flyer prints on one page");
+  check(!(await page.getByRole("button", { name: "Print handouts" }).isVisible()), "handouts: buttons hidden when printing");
+  await page.emulateMedia({ media: "screen" });
+
+  // Both languages, two per page.
+  await page.getByRole("button", { name: "Change answers" }).click();
+  check((await page.getByLabel("Name of this spot").inputValue()) === "Republic Square Park", "handouts: answers kept when changing them");
+  await page.getByRole("radio", { name: /^Both/ }).check();
+  await page.getByRole("radio", { name: /2 flyers per page/ }).check();
+  await make.click();
+  check((await page.locator("article").count()) === 2, "handouts: half size shows two flyers");
+  const langs = await page.$$eval("article", (a) => a.map((x) => x.lang));
+  check(langs.join() === "en,es", "handouts: one English and one Spanish", langs.join());
+  check(await seen(page.getByText("Usted es amado. No está solo.")), "handouts: Spanish flyer is in Spanish");
+  check((await clippedSheets(page)).length === 0, "handouts: nothing cut off the half flyers");
+  await page.emulateMedia({ media: "print" });
+  check((await pdfPages(page)) === 1, "handouts: two half flyers fit on one page");
+  await page.emulateMedia({ media: "screen" });
+
+  // Both languages, full size = 2 pages; no devotional.
+  await page.getByRole("button", { name: "Change answers" }).click();
+  await page.getByRole("radio", { name: /1 big flyer/ }).check();
+  await page.getByRole("combobox", { name: "Add a short devotional?" }).selectOption("none");
+  await make.click();
+  check(!(await page.getByText("A word of hope").isVisible()), "handouts: devotional can be left off");
+  await page.emulateMedia({ media: "print" });
+  check((await pdfPages(page)) === 2, "handouts: both languages full size prints 2 pages");
+  await page.emulateMedia({ media: "screen" });
+
+  // Nothing typed is stored.
+  const stored = await page.evaluate(() => JSON.stringify({ ...sessionStorage }) + JSON.stringify({ ...localStorage }) + document.cookie);
+  check(!/Republic|aus-downtown/.test(stored), "handouts: nothing typed is saved", stored);
+  check(page.outside.length === 0, "handouts: no requests to outside sites", page.outside.join(", "));
+  await page.context().close();
+}
+{
+  // Other cities, far away, and phones.
+  const page = await newPage({ width: 320 });
+  await page.goto(BASE + "/handout/");
+  await page.getByPlaceholder(/ZIP/).fill("77002");
+  await page.getByRole("button", { name: "OK", exact: true }).click();
+  await seen(page.getByText(/ZIP 77002 \(Houston\)/));
+  await page.getByRole("button", { name: "Make my handout" }).click();
+  check(await seen(page.getByText(/Houston Central Library/)), "handouts: Houston ZIP picks the Houston library");
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  check(overflow <= 0, "handouts: preview fits a 320px phone", `${overflow}px`);
+  await page.emulateMedia({ media: "print" });
+  check((await pdfPages(page)) === 1, "handouts: prints one page from a phone");
+  await page.emulateMedia({ media: "screen" });
+  await page.getByRole("button", { name: "Change answers" }).click();
+  await page.getByRole("button", { name: "Change", exact: true }).click();
+  await page.getByPlaceholder(/ZIP/).fill("79101");
+  await page.getByRole("button", { name: "OK", exact: true }).click();
+  await seen(page.getByText(/ZIP 79101/));
+  await page.getByRole("button", { name: "Make my handout" }).click();
+  check(await seen(page.getByText(/Ask anyone where the closest public library is/)), "handouts: far from our cities, no far-off library is named");
+  await page.context().close();
+}
+{
+  const page = await newPage({ lang: "es" });
+  await page.goto(BASE + "/handout/");
+  check(await seen(page.getByRole("heading", { name: "Hacer volantes" })), "handouts page in Spanish");
+  for (const width of [320, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.waitForTimeout(150);
+    const broken = await splitWords(page, "main button, main label");
+    check(broken.length === 0, `handouts: no words split at ${width}px (es)`, broken.join(", "));
+  }
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.locator("select").first().selectOption("aus-downtown");
+  await page.getByRole("button", { name: "Hacer mi volante" }).click();
+  const langs = await page.$$eval("article", (a) => a.map((x) => x.lang));
+  check(langs.join() === "es", "handouts: Spanish site makes a Spanish flyer by default", langs.join());
+  await page.context().close();
+}
+{
+  // The longest flyers: every city, 4 needs, both languages, both sizes. Nothing may be cut off.
+  const page = await newPage();
+  await page.goto(BASE + "/handout/");
+  const spots = await page.$$eval("select optgroup", (g) => g.map((x) => x.querySelector("option").value));
+  await page.getByRole("button", { name: /^Showers/ }).click();
+  await page.getByRole("button", { name: /^Medical/ }).click();
+  await page.getByRole("button", { name: /^Legal/ }).click();
+  await page.getByRole("radio", { name: /^Both/ }).check();
+  const cut = [];
+  const fits = [];
+  for (const spot of spots) {
+    for (const size of [/1 big flyer/, /2 flyers per page/]) {
+      if (await page.getByRole("button", { name: "Change", exact: true }).isVisible()) await page.getByRole("button", { name: "Change", exact: true }).click();
+      await page.locator("select").first().selectOption(spot);
+      await page.getByLabel("Name of this spot").fill("The bus stop at the corner of 7th and Main");
+      await page.getByRole("radio", { name: size }).check();
+      await page.getByRole("button", { name: "Make my handout" }).click();
+      await page.waitForSelector("article");
+      for (const l of await clippedSheets(page)) cut.push(`${spot} ${size.source} ${l}`);
+      fits.push(...(await page.$$eval("article", (a) => a.map((x) => Number(x.dataset.fit)))));
+      await page.getByRole("button", { name: "Change answers" }).click();
+    }
+  }
+  check(cut.length === 0, `handouts: nothing cut off in any city (${spots.length} cities × 2 sizes × 2 languages)`, cut.join(", "));
+  check(Math.min(...fits) >= 0.85, "handouts: even the longest flyer stays at least 85% size", `smallest ${Math.min(...fits)}`);
   await page.context().close();
 }
 
